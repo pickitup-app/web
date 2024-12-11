@@ -23,4 +23,16 @@ class MobileController extends Controller
      
         return $user->createToken($request->device_name)->plainTextToken;
     }
+
+    public function register(Request $request) {
+        $user = new User;
+        $data = $request->validate([
+                'email' => 'required|email',
+                'name' => 'required',
+                'phone_number' => 'required|0-9|min:11',
+                'password' => 'required',
+                'device_name' => 'required'
+        ]);
+    }
+    
 }
