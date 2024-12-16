@@ -38,7 +38,7 @@
                 <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
                     <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i class="bi bi-search"></i> </a> </li> <!--end::Navbar Search--> 
                     <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a> </li> <!--end::Fullscreen Toggle--> <!--begin::User Menu Dropdown-->
-                    <li class="nav-item dropdown user-menu profile-wrap"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="{{asset('img/dummyprofile.png')}}" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">John David</span> </a>
+                    <li class="nav-item dropdown user-menu profile-wrap"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="{{asset('img/dummyprofile.png')}}" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">John David</span> <img src="{{ asset('img/arrow-down.svg') }}" alt="" class="arrow-down"> </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
                             <li class="user-header text-bg-primary"> <img src="../../dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image">
                                 <p>
@@ -60,31 +60,81 @@
             </div> <!--end::Container-->
         </nav> <!--end::Header--> <!--begin::Sidebar-->
         <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
-            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link"> <!--begin::Brand Image--> <img src="{{ asset('img/dummyprofile.png') }}" alt="AdminLTE Logo" class="brand-image opacity-75 shadow"> <!--end::Brand Image--> <!--begin::Brand Text--> <span class="brand-text fw-light">John David</span> <!--end::Brand Text--> </a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
+            <div class="sidebar-brand"> 
+                <!--begin::Brand Link--> 
+                <a href="./index.html" class="brand-link"> 
+                    <!--begin::Brand Image--> 
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="AdminLTE Logo" class="opacity-75 shadow profile-side"> 
+                    <!--end::Brand Image--> 
+                    <!--begin::Brand Text--> 
+                    <span class="brand-text fw-light">
+                        John David
+                        <span class="online-tag"><img src="{{ asset('img/online-dot.svg') }}" alt=""> <p>Online</p></span>
+                    </span> <!--end::Brand Text-->
+                    
+                </a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
             <div class="sidebar-wrapper">
                 <nav class="mt-2"> <!--begin::Sidebar Menu-->
+                    <div class="container-fluid sidebar-general">
+                        <h2 class="text-light">General</h2>
+                        
+                    </div>
+                    <hr style="border: 2px solid #628A4C; opacity:1" class="m-0">
                     <ul class="nav sidebar-menu flex-column sidebar-custom" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item menu-open"> <a href="#" class="nav-link active"> <i class="nav-icon bi bi-speedometer"></i>
-                                <p>
-                                    Dashboard
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./index.html" class="nav-link active"> <i class="nav-icon bi bi-circle"></i>
-                                        <p>Dashboard v1</p>
-                                    </a> </li>
-                                <li class="nav-item"> <a href="./index2.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                                        <p>Dashboard v2</p>
-                                    </a> </li>
-                                <li class="nav-item"> <a href="./index3.html" class="nav-link"> <i class="nav-icon bi bi-circle"></i>
-                                        <p>Dashboard v3</p>
-                                    </a> </li>
-                            </ul>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link"> 
+                                <img src="{{ asset('img/dashboard/dashboard.svg') }}" alt="">
+                                <p>Dashboard</p>
+                            </a> 
                         </li>
-                        <li class="nav-item"> <a href="./generate/theme.html" class="nav-link"> <i class="nav-icon bi bi-palette"></i>
-                                <p>Theme Generate</p>
-                            </a> </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link">
+                                <img src="{{ asset('img/dashboard/user.svg') }}" alt="">
+                                <p>User Data</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link">
+                                <img src="{{ asset('img/dashboard/healthtruck.svg') }}" alt="">
+                                <p>Driver Data</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link">
+                                <img src="{{ asset('img/dashboard/clock.svg') }}" alt="">
+                                <p>Pick-Up Schedule</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link">
+                                <img src="{{ asset('img/dashboard/bell.svg') }}" alt="">
+                                <p>Urgent Pick-Up</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link">
+                                <img src="{{ asset('img/dashboard/locations.svg') }}" alt="">
+                                <p>Drop-Off Point</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link">
+                                <img src="{{ asset('img/dashboard/status.svg') }}" alt="">
+                                <p>Pick-Up Status</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link"> 
+                                <img src="{{ asset('img/dashboard/calculator.svg') }}" alt="">
+                                <p>Input Weight</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="./generate/theme.html" class="nav-link"> 
+                                <img src="{{ asset('img/dashboard/point.svg') }}" alt="">
+                                <p>Point</p>
+                            </a> 
+                        </li>
                     </ul> <!--end::Sidebar Menu-->
                 </nav>
             </div> <!--end::Sidebar Wrapper-->
@@ -96,14 +146,6 @@
                 </div> <!--end::Container-->
             </div> <!--end::App Content-->
         </main> <!--end::App Main--> <!--begin::Footer-->
-        <footer class="app-footer"> <!--begin::To the end-->
-            <div class="float-end d-none d-sm-inline">Anything you want</div> <!--end::To the end--> <!--begin::Copyright--> <strong>
-                Copyright &copy; 2014-2024&nbsp;
-                <a href="https://adminlte.io" class="text-decoration-none">AdminLTE.io</a>.
-            </strong>
-            All rights reserved.
-            <!--end::Copyright-->
-        </footer> <!--end::Footer-->
     </div> <!--end::App Wrapper--> <!--begin::Script--> <!--begin::Third Party Plugin(OverlayScrollbars)-->
     <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.3.0/browser/overlayscrollbars.browser.es6.min.js" integrity="sha256-H2VM7BKda+v2Z4+DRy69uknwxjyDRhszjXFhsL4gD3w=" crossorigin="anonymous"></script> <!--end::Third Party Plugin(OverlayScrollbars)--><!--begin::Required Plugin(popperjs for Bootstrap 5)-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script> <!--end::Required Plugin(popperjs for Bootstrap 5)--><!--begin::Required Plugin(Bootstrap 5)-->
