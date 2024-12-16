@@ -28,3 +28,11 @@ Route::get('/edituser', function () {
 Route::get('/editdriver', function () {
     return view('dashboard.editdriver');
 });
+
+Route::get('/adddop', function () {
+    return view('dashboard.adddop');
+});
+
+Route::get('/editdop', function () {
+    return view('dashboard.editdop');
+});
