@@ -16,3 +16,15 @@ Route::get('/dashboard', function () {
 Route::get('/adduser', function () {
     return view('dashboard.adduser');
 });
+
+Route::get('/adddriver', function () {
+    return view('dashboard.adddriver');
+});
+
+Route::get('/edituser', function () {
+    return view('dashboard.edituser');
+});
+
+Route::get('/editdriver', function () {
+    return view('dashboard.editdriver');
+});
