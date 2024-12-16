@@ -12,3 +12,7 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('layouts.index');
 });
+
+Route::get('/adduser', function () {
+    return view('dashboard.adduser');
+});

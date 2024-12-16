@@ -15,3 +15,53 @@ body > div > aside > div.sidebar-wrapper > div:nth-child(2) {
 body > div > nav > div > ul.navbar-nav.text-light > li {
     color: white !important;
 }
+
+.hamburger {
+    background-color: #FFB902;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-menu {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.app-header {
+    padding: 0;
+    height: 75px;
+}
+
+.piu-icon{
+    height: 100%;
+}
+
+.wrap-icon{
+    padding: 0;
+}
+
+.wrap-icon > .nav-link {
+    padding: 0;
+}
+
+.profile-wrap {
+    background-color: #FFB902;
+}
+
+.nav-link {
+    padding: 0 10px !important;
+}
+
+.navbar-nav > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
