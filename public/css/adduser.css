@@ -1,0 +1,95 @@
+.app-main{
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-fluid{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper{
+    height: 90%;
+    width: 95%;
+    background-color: #FFFFFF;
+    position: relative; /* Tambahkan properti ini */
+}
+
+.form-title{
+    font-family: "Baloo Bhai 2", serif;
+    padding-top: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.line-au{
+    background-color: black;
+    height: 1px;
+    opacity: 1;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.form-control{
+    border: none;
+    box-shadow: none;
+    /* width: 30vw; */
+}
+
+input{
+    width: 100%;
+    height: 45px;
+    background-color: #F0F0F0;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.input-name {
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    position: absolute; /* Membuat tombol berada di posisi tetap */
+    bottom: 0; /* Mengatur posisi ke bagian bawah */
+    right: 0; /* Mengatur posisi ke bagian kanan */
+    width: 100%; /* Pastikan wrapper mencakup seluruh lebar form */
+}
+
+.submit-button {
+    width: 240px;
+    height: 52px;
+    border: 0;
+    border-radius: 15px;
+    background: #476A49;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Baloo Bhai 2", serif;
+    cursor: pointer; /* Tambahkan efek kursor */
+}
+
+/* input::placeholder {
+    padding-left: 20px;
+} */
