@@ -1,0 +1,17 @@
+body > div > aside > div.sidebar-wrapper > div:nth-child(2) {
+    background: url('./../img/Topographic.svg');
+    background-size: cover;
+    background-color: #0C3A2D;
+}
+
+.sidebar-brand {
+    background-color: #628A4C;
+    height: 100px;
+}
+.navbar {
+    background-color: #0C3A2D !important;
+}
+
+body > div > nav > div > ul.navbar-nav.text-light > li {
+    color: white !important;
+}
