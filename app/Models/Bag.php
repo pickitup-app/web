@@ -6,7 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bag extends Model
 {
-    protected $fillable =[
-        'id'
-    ];
+    protected $guarded =['id'];
 }

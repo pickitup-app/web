@@ -141,7 +141,7 @@
         </aside> <!--end::Sidebar--> <!--begin::App Main-->
         <main class="app-main"> <!--begin::App Content Header-->
         
-                <div class="container-fluid d-flex justify-content-center align-items-center"> <!--begin::Row-->
+                <div class="container-fluid d-flex justify-content-center align-items-center content-wrapper m-0 p-0"> <!--begin::Row-->
                     @yield('content')
                 </div> <!--end::Container-->
             </div> <!--end::App Content-->
