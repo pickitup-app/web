@@ -36,3 +36,15 @@ Route::get('/adddop', function () {
 Route::get('/editdop', function () {
     return view('dashboard.editdop');
 });
+
+Route::get('/updatetrash', function () {
+    return view('dashboard.updatetrash');
+});
+
+Route::get('/userdata', function () {
+    return view('dashboard.userdata');
+});
+
+Route::get('/driverdata', function () {
+    return view('dashboard.driverdata');
+});

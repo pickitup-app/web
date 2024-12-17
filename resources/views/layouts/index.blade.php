@@ -19,6 +19,7 @@
     {{-- Import PickItUp Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
     <link rel="stylesheet" href="{{ asset('css/adduser.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/userdata.css') }}">
 
     {{-- Import Font Baloo Bhai 2 & Be Vietnam Pro --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

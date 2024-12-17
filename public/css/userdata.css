@@ -1,0 +1,246 @@
+.user-data-text{
+    background-color: white;
+    width: 100%;
+    height: 82px;
+    position: absolute;
+    top: 0;
+    padding-left: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 5px 5px grey;
+}
+
+.user-data-text h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-size: 25px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.data-wrapper{
+    background-color: white;
+    height: 78%;
+    width: 93%;
+    display: flex;
+    position: absolute;
+    bottom: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-data{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.search-section{
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    height: 50%;
+    width: 60%;
+    border-radius: 50px;
+    justify-content: flex-start;
+}
+
+.search-section input{
+    background: transparent;
+    height: 100%;
+}
+
+.search-section button {
+    background: transparent;
+    border: 0;
+}
+
+.search-section img{
+    height: 50%;
+    padding-right: 20px;
+}
+
+.add-new-user{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    align-items: center;
+    gap: 15px;
+}
+
+.add-new-user h3{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #263620;
+    opacity: 40%;
+    margin: 0;
+}
+
+.add-icon{
+    background-color: #6D9772;
+    border-radius: 10px;
+    height: 42px;
+    width: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-icon img{
+    height: 60%;
+}
+
+.table-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.table{
+    width: 89%;
+    border: black;
+    font-family: "Be Vietnam Pro", serif;
+}
+
+table, th, td{
+    border: 1px solid;
+}
+
+.table tr th:first-child, 
+.table tr td:first-child {
+    display: none;
+}
+
+.header-font {
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.data-font {
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.data-button{
+    border: none;
+    background: transparent;
+}
+
+.points-button{
+    background-color: #FFB902;
+    border-radius: 2px;
+    height: 50%;
+    font-size: 10px;
+    padding: 10px 25px;
+}
+
+.search-section-driver{
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    height: 50%;
+    width: 30%;
+    border-radius: 50px;
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+
+.search-section-driver input{
+    background: transparent;
+    height: 100%;
+}
+
+.search-section-driver button {
+    background: transparent;
+    border: 0;
+}
+
+.search-section-driver img{
+    height: 50%;
+    padding-right: 20px;
+}
+
+.area-section{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.dropdown-menu {
+    background-color: #6D9772; 
+}
+
+.dropdown-menu a{
+    color: white;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: white; 
+}
+
+.dropdown button h5{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.area button{
+    background-color: #80A483;    
+}
+
+.province button{
+    background-color: #f0f0f0;
+}
+
+.area h5{
+    color: #263620;
+    opacity: 60%;
+}
+
+.province h5{
+    color: #263620;
+    opacity: 60%;
+}
+
+.dropdown button{
+    border-radius: 0;
+    border: 0;
+}
+
+.dropdown button:hover{
+    background-color: #FFB902;
+    opacity: 80%;
+}
+
+.dropdown-toggle::after{
+    color: #263620;
+    opacity: 60%;
+}
+
+.add-new-driver{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    align-items: center;
+    gap: 15px;
+    margin-right: 70px;
+}
+
+.add-new-driver h3{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #263620;
+    opacity: 40%;
+    margin: 0;
+}
