@@ -40,9 +40,9 @@
                     <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a> </li> <!--end::Fullscreen Toggle--> <!--begin::User Menu Dropdown-->
                     <li class="nav-item dropdown user-menu profile-wrap"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="{{asset('img/dummyprofile.png')}}" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">John David</span> <img src="{{ asset('img/arrow-down.svg') }}" alt="" class="arrow-down"> </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
-                            <li class="user-header text-bg-primary"> <img src="../../dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image">
+                            <li class="user-header bg-custom-primary"> <img src="{{ asset('img/dummyprofile.png') }}" class="rounded-circle shadow" alt="User Image">
                                 <p>
-                                    Alexander Pierce - Web Developer
+                                    John David - Web Developer
                                     <small>Member since Nov. 2023</small>
                                 </p>
                             </li> <!--end::User Image--> <!--begin::Menu Body-->
@@ -81,7 +81,7 @@
                     </div>
                     <hr style="border: 2px solid #628A4C; opacity:1" class="m-0">
                     <ul class="nav sidebar-menu flex-column sidebar-custom" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item"> 
+                        <li class="nav-item active"> 
                             <a href="./generate/theme.html" class="nav-link"> 
                                 <img src="{{ asset('img/dashboard/dashboard.svg') }}" alt="">
                                 <p>Dashboard</p>

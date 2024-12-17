@@ -187,8 +187,17 @@ ul.navbar-nav {
 
 .sidebar-general {
     padding: 10px 0px;
+    justify-content: start !important;
     h2 {
         padding: 0 10px;
         font-size: 30px;
     }
+}
+
+.bg-custom-primary {
+    background: #FFB902;
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.2);
 }
