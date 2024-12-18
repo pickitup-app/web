@@ -1,10 +1,10 @@
 @extends('layouts.index')
 
 @section('content')
-    <div class="user-data-text">
+    <div class="user-data-text shadow">
         <h2>User Data</h2>
     </div>
-
+    
     <div class="data-wrapper">
         <div class="header-data">
             <div class="search-section">

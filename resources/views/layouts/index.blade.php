@@ -19,6 +19,8 @@
     {{-- Import PickItUp Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
     <link rel="stylesheet" href="{{ asset('css/adduser.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pickupstatus.css') }}">
     <link rel="stylesheet" href="{{ asset('css/userdata.css') }}">
     <link rel="stylesheet" href="{{ asset('css/user-seepoints.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dropoffpoint.css') }}">
@@ -130,13 +132,7 @@
                         <li class="nav-item"> 
                             <a href="./generate/theme.html" class="nav-link"> 
                                 <img src="{{ asset('img/dashboard/calculator.svg') }}" alt="">
-                                <p>Input Weight</p>
-                            </a> 
-                        </li>
-                        <li class="nav-item"> 
-                            <a href="./generate/theme.html" class="nav-link"> 
-                                <img src="{{ asset('img/dashboard/point.svg') }}" alt="">
-                                <p>Point</p>
+                                <p>Trash Info</p>
                             </a> 
                         </li>
                     </ul> <!--end::Sidebar Menu-->
