@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
     <link rel="stylesheet" href="{{ asset('css/adduser.css') }}">
     <link rel="stylesheet" href="{{ asset('css/userdata.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/user-seepoints.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dropoffpoint.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/trashinfo.css') }}">
 
     {{-- Import Font Baloo Bhai 2 & Be Vietnam Pro --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

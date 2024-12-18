@@ -48,3 +48,15 @@ Route::get('/userdata', function () {
 Route::get('/driverdata', function () {
     return view('dashboard.driverdata');
 });
+
+Route::get('/seepoints', function () {
+    return view('dashboard.user-seepoints');
+});
+
+Route::get('/dropoffpoint', function () {
+    return view('dashboard.dropoffpoint');
+});
+
+Route::get('/trashinfo', function () {
+    return view('dashboard.trashinfo');
+});

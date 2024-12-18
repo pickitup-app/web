@@ -1,0 +1,44 @@
+.table-trash {
+    margin-top: 2%;
+    width: 95%;
+    border-collapse: separate; /* Penting agar border-spacing berfungsi */
+    border-spacing: 0 10px; /* Atur jarak vertikal antar baris */
+}
+
+.table-trash th, .table-trash td {
+    border: none;
+    padding: 10px; /* Menambahkan padding */
+    text-align: center;
+}
+
+.table-trash th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+}
+
+.table-trash td {
+    background-color: #f9f9f9;
+    font-size: 15px;
+}
+
+.table-trash tr:nth-child(even) td {
+    background-color: #f0f0f0; /* Warna abu-abu untuk baris genap */
+}
+
+.table-trash tr:hover td {
+    background-color: #dcdcdc; /* Efek hover */
+}
+
+.data-button {
+    background-color: #ffc107; /* Warna kuning */
+    border: none;
+    color: black;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.data-button:hover {
+    background-color: #e0a800; /* Warna hover */
+}

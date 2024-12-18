@@ -1,0 +1,163 @@
+.header-seepoints{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    padding-left: 50px;
+}
+
+.account-information h3{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.customer-points{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    padding-right: 50px;
+}
+
+.customer-points h3{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: right;
+    margin: 1px;
+}
+
+.customer-points h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 40px;
+    color: #476A49;
+    margin: 0;
+}
+
+.main-seepoints{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.column-title{
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    background-color: #476A49;
+}
+
+.column-title h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    margin: 4px;
+    padding: 5px;
+}
+
+.column1{
+    width: 35%;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column1 h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    margin: 4px;
+}
+
+.column2{
+    width: 35%;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column2 h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    margin: 4px;
+}
+
+.column3{
+    width: 30%;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column3 h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    margin: 4px;
+}
+
+.row-content{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 20px;
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+}
+
+.row1 h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    margin: 4px;
+    padding: 20px;
+}
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+}
+
+.row2 h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    margin: 4px;
+    padding: 20px;
+}
+
+.row3 {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+}
+
+.row3 h2{
+    font-family: "Baloo Bhai 2", serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    margin: 4px;
+    padding: 20px;
+}
