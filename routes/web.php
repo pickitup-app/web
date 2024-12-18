@@ -13,6 +13,10 @@ Route::get('/dashboard', function () {
     return view('layouts.index');
 });
 
+Route::get('/pickupstatus', function () {
+    return view('dashboard.pickupstatus');
+});
+
 Route::get('/adduser', function () {
     return view('dashboard.adduser');
 });

@@ -1,0 +1,92 @@
+.app-title {
+    height: 90px;
+    width: 100%;
+    padding: 30px 30px;
+    background: white;
+    margin-bottom: 40px;
+    h2 {
+        font-weight: bold;
+        font-size: 30px;
+        color: #0D1F07;
+        opacity: 0.9;
+    }
+}
+
+.app-content {
+    margin-top: 40px;
+}
+
+.wrapper-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background: white; */
+    width: 100%;
+}
+
+.wrapper-content > .card-content{
+    width: 21%;
+}
+
+.card-content {
+    background: white;
+    display: flex;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 30px 20px;
+
+    p, h3{
+        margin-bottom: 0;
+    }
+}
+
+.card-content > img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 13px;
+}
+
+.social-header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #3B5999;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.social-followers {
+    padding: 10px 0;
+    
+    h4 {
+        margin-bottom: 0;
+        font-weight: bolder;
+    }
+}
+
+.social-black {
+    background: black;
+}
+
+.social-pink {
+    background: #FF457A;
+}
+
+.social-orange {
+    background: #FD9603;
+}
+
+.text-gray {
+    color: #000000;
+    opacity: 0.5;
+}

@@ -19,6 +19,8 @@
     {{-- Import PickItUp Custom CSS --}}
     <link rel="stylesheet" href="{{ asset('css/adminpanel.css') }}">
     <link rel="stylesheet" href="{{ asset('css/adduser.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pickupstatus.css') }}">
 
     {{-- Import Font Baloo Bhai 2 & Be Vietnam Pro --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,13 +128,7 @@
                         <li class="nav-item"> 
                             <a href="./generate/theme.html" class="nav-link"> 
                                 <img src="{{ asset('img/dashboard/calculator.svg') }}" alt="">
-                                <p>Input Weight</p>
-                            </a> 
-                        </li>
-                        <li class="nav-item"> 
-                            <a href="./generate/theme.html" class="nav-link"> 
-                                <img src="{{ asset('img/dashboard/point.svg') }}" alt="">
-                                <p>Point</p>
+                                <p>Trash Info</p>
                             </a> 
                         </li>
                     </ul> <!--end::Sidebar Menu-->
