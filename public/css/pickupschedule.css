@@ -1,0 +1,109 @@
+.data-wrapper-pickup{
+    background-color: white;
+    height: 78%;
+    width: 93%;
+    display: flex;
+    position: absolute;
+    bottom: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-data-pickup{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 13%;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 30px;
+    border-bottom: 2px solid black;
+}
+
+.search-section-pickup{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    border: 1px solid black;
+    height: 47%;
+    width: 28%;
+    border-radius: 0px;
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+
+.search-section-pickup input{
+    background: transparent;
+    height: 100%;
+}
+
+.search-section-pickup button {
+    background: transparent;
+    border: 0;
+}
+
+.search-section-pickup img{
+    height: 50%;
+    padding-right: 20px;
+}
+
+.level-section{
+    width: 20%;
+    height: 47%;
+}
+
+.level {
+    height: 100%;
+}
+
+.level button{
+    width: 100%;
+    gap: 20px;
+}
+
+.level button h5{
+    font-family: "Be Vietnam Pro", serif;
+    font-size: 12px;
+    color: #263620;
+    opacity: 100%;
+    font-weight: normal;
+}
+
+.content-wrapper-pickup{
+    display: flex;
+    flex-direction: row;
+    /* background-color: pink; */
+    height: 68%;
+    width: 93%;
+    position: relative;
+    margin-top: 21%;
+}
+
+.list-user-pickup {
+    width: 40%;
+}
+
+.side-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F2F2F2;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.side-user img{
+    height: 10%;
+    width: 10%;
+    margin: 10px;
+}
+
+.name{
+    font-size: 20px;
+    margin: 0;
+}
+
+.phone {
+    font-size: 15px;
+    margin: 0;
+}

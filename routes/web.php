@@ -64,3 +64,7 @@ Route::get('/dropoffpoint', function () {
 Route::get('/trashinfo', function () {
     return view('dashboard.trashinfo');
 });
+
+Route::get('/pickupschedule', function () {
+    return view('dashboard.pickupschedule');
+});

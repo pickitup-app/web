@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('css/user-seepoints.css') }}">
     <link rel="stylesheet" href="{{ asset('css/dropoffpoint.css') }}">
     <link rel="stylesheet" href="{{ asset('css/trashinfo.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pickupschedule.css') }}">
+
 
     {{-- Import Font Baloo Bhai 2 & Be Vietnam Pro --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
