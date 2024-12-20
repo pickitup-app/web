@@ -29,7 +29,6 @@
                       <li><a class="dropdown-item" href="#">Jawa Timur</a></li>
                     </ul>
                   </div>
-                </div>
             </div>
         </div>
         <div class="content-wrapper-pickup">
@@ -118,6 +117,57 @@
                         <h4 class="phone">0895-4141-4331</h4>
                     </div>
                 </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+
+                
 
 
             </div>
@@ -226,8 +276,6 @@
                 </div>
 
             </div>
-
-        </div>
     </div>
 
 

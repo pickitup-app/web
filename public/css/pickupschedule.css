@@ -1,12 +1,12 @@
 .data-wrapper-pickup{
     background-color: white;
-    height: 78%;
-    width: 93%;
+    height: 100%;
+    width: 100% !important;
     display: flex;
-    position: absolute;
-    bottom: 35px;
+    /* position: absolute; */
+    margin-top: 200px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
 }
 
 .header-data-pickup{
@@ -76,13 +76,15 @@
     /* background-color: pink; */
     height: 68%;
     width: 93%;
-    position: relative;
-    margin-top: 25%;
-    overflow-y: auto;
+    /* position: relative; */
+    /* margin-top: 25%; */
+    /* overflow-y: auto; */
 }
 
 .list-user-pickup {
-    width: 35%;
+    width: 30%;
+    height: 600px;
+    overflow-y: scroll;
     /* overflow-y: auto; */
 }
 
@@ -112,12 +114,12 @@
 }
 
 .detail-profile {
-    width: 65%;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
-    position: absolute;
+    /* position: absolute; */
     padding: 15px;
     padding-right: 30px;
     gap: 20px;
@@ -142,29 +144,35 @@
 }
 
 .detail-user-pickup{
-    width: 65%;
+    /* width: 65%; */
     /* background-color: tan; */
+    height: fit-content;
+    width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column !important;
 }
 
 .list-schedule{
     display: flex;
     flex-direction: column;
-    position: relative;
-    z-index: 1;
-    margin-top: 15%;
+    /* position: relative; */
+    /* z-index: 1; */
+    /* margin-top: 15%; */
     /* background-color: white; */
     width: 100%;
     /* overflow-y: auto; */
     gap: 10px;
     align-items: center;
     padding-top: 18px;
+    height: 500px;
+    overflow-y: scroll;
 }
 
 .detail-schedule1{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 30%;
     width: 90%;
     height: fit-content;
