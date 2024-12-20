@@ -89,15 +89,139 @@
                         <h2 class="name">Jessica Mila</h2>
                         <h4 class="phone">0895-4141-4331</h4>
                     </div>
-                </div>~
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
+                <div class="side-user">
+                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    <div class="name-phone">
+                        <h2 class="name">Jessica Mila</h2>
+                        <h4 class="phone">0895-4141-4331</h4>
+                    </div>
+                </div>
 
 
             </div>
             <div class="detail-user-pickup">
                 <div class="detail-profile">
-
+                    <div class="name-number">
+                        <h2>Jessica Mila</h2>
+                        <h4>0895-4141-4331</h4>
+                    </div>
+                    <div class="profpic">
+                        <img src="{{ asset('img/dummyprofile.png') }}" alt="">
+                    </div>
                 </div>
-                <div class="detail-pickup">
+                <div class="list-schedule">
+                    <div class="detail-schedule1">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon">
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
+                    <div class="detail-schedule">
+                        <div class="date-type">
+                            <h3>1 December 2024</h3>
+                            <h3>Regular Pick Up Schedule</h3>
+                        </div>
+                        <div class="status-pickup">
+                            {{-- <h2>Done</h2>
+                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
+                        </div>
+                    </div>
 
                 </div>
 
