@@ -68,3 +68,11 @@ Route::get('/trashinfo', function () {
 Route::get('/pickupschedule', function () {
     return view('dashboard.pickupschedule');
 });
+
+Route::get('/urgentpickup', function () {
+    return view('dashboard.urgentpickup');
+});
+
+Route::get('/assigndriver', function () {
+    return view('dashboard.assigndriver');
+});

@@ -1,0 +1,121 @@
+.btn-up-cat {
+    background: #FFB902;
+    color: #000000;
+    font-weight: bold;
+    height: 100%;
+    width: 200px;
+    border-radius: 0 0 20px 0;
+}
+
+.btn-up-cat-drop {
+    background: transparent;
+    color: #000000;
+    font-weight: bold;
+    width: 200px;
+    border-radius: 0 0 20px 0;
+}
+
+.rounded-20 {
+    border-radius: 0 0 20px 0 !important;
+    /* overflow: hidden; */
+    background: #FFB902;
+    height: 40px;
+}
+
+.card-wrapper-urgent-pickup {
+    width: 100%;
+    height: 500px;
+    /* background: pink; */
+    overflow-y: scroll;
+}
+
+.card-individual-urgent {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+
+.indiv-card-urgent {
+    background: #F2F2F2;
+    padding: 25px;
+    h3 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+
+    h4 {
+        margin-bottom: 0;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .line-urgent {
+        height: 50px;
+        border: 1px solid black;
+    }
+
+    .btn-urpickup {
+        height: 85px !important;
+        display: flex;
+        font-size: 25px;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 14px;
+        font-weight: bold;
+        border-radius: 20px;
+    }
+
+    .btn-urpickup-completed {
+        height: 85px !important;
+        display: flex;
+        font-size: 25px;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 14px;
+        font-weight: bold;
+        border-radius: 20px;
+        background: #D9D9D9;
+        border: 1px solid #D9D9D9;
+        color: rgba(0, 0, 0, 0.2);
+        cursor: no-drop;
+    }
+    .ur-waiting {
+        font-weight: bold;
+        color: #FF8400;
+        text-align: right;
+    }
+
+    .ur-completed {
+        font-weight: bold;
+        color: #476A49;
+        text-align: right;
+    }
+}
+
+.container-ur-pickup {
+    width: 90%;
+}
+
+.btn-wrapper-ur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.text-driver-online {
+    color: #263620;
+    opacity: 0.6;
+    margin-bottom: 0;
+}
+
+.bg-inactive {
+    background: #D9D9D9 !important;
+}

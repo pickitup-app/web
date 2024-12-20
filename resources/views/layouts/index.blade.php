@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="{{ asset('css/dropoffpoint.css') }}">
     <link rel="stylesheet" href="{{ asset('css/trashinfo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pickupschedule.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/urgentpickup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/assigndriver.css') }}">
 
 
     {{-- Import Font Baloo Bhai 2 & Be Vietnam Pro --}}
@@ -54,14 +56,14 @@
                                     <small>Member since Nov. 2023</small>
                                 </p>
                             </li> <!--end::User Image--> <!--begin::Menu Body-->
-                            <li class="user-body"> <!--begin::Row-->
+                            <li class="user-body bg-light"> <!--begin::Row-->
                                 <div class="row">
                                     <div class="col-4 text-center"> <a href="#">Followers</a> </div>
                                     <div class="col-4 text-center"> <a href="#">Sales</a> </div>
                                     <div class="col-4 text-center"> <a href="#">Friends</a> </div>
                                 </div> <!--end::Row-->
                             </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
-                            <li class="user-footer"> <a href="#" class="btn btn-default btn-flat">Profile</a> <a href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
+                            <li class="user-footer bg-light"> <a href="#" class="btn btn-default btn-flat">Profile</a> <a href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
                         </ul>
                     </li> <!--end::User Menu Dropdown-->
                 </ul> <!--end::End Navbar Links-->
