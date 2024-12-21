@@ -1,32 +1,29 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\TrackController;
+use App\Http\Controllers\TrashController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\BagController;
 
-Route::get('/', function () {
-    return view('dashboard.home');
-});
 
-Route::get('/login', function () {
-    return view('loginpage');
-});
-Route::get('/dashboard', function () {
-    return view('layouts.index');
-});
+Route::get('/',[UserController::class,'index']);
+
+Route::get('/login',[UserController::class,'loginpage']);
 
 Route::get('/pickupstatus', function () {
     return view('dashboard.pickupstatus');
 });
 
-Route::get('/adduser', function () {
-    return view('dashboard.adduser');
-});
+Route::get('/adduser',[UserController::class,'adduser']);
+Route::get('/edituser',[UserController::class,'edituser']);
+Route::get('/userdata',[UserController::class,'userdata']);
+Route::get('/see-points',[UserController::class,'seepoints']);
 
 Route::get('/adddriver', function () {
     return view('dashboard.adddriver');
-});
-
-Route::get('/edituser', function () {
-    return view('dashboard.edituser');
 });
 
 Route::get('/editdriver', function () {
@@ -45,16 +42,8 @@ Route::get('/updatetrash', function () {
     return view('dashboard.updatetrash');
 });
 
-Route::get('/userdata', function () {
-    return view('dashboard.userdata');
-});
-
 Route::get('/driverdata', function () {
     return view('dashboard.driverdata');
-});
-
-Route::get('/seepoints', function () {
-    return view('dashboard.user-seepoints');
 });
 
 Route::get('/dropoffpoint', function () {
