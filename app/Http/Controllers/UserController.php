@@ -38,6 +38,28 @@ class UserController extends Controller
         return view('dashboard.user-seepoints');
     }
 
+    // Driver
+
+    public function adddriver()
+    {
+        return view('dashboard.adddriver');
+    }
+
+    public function editdriver()
+    {
+        return view('dashboard.editdriver');
+    }
+
+    public function driverdata()
+    {
+        return view('dashboard.driverdata');
+    }
+
+    public function assigndriver()
+    {
+        return view('dashboard.assigndriver');
+    }
+
     // Login
 
     public function loginpage()
