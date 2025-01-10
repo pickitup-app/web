@@ -18,8 +18,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->default('user');
-            $table->string('address');
-            $table->string('coordinates');
+            $table->string('address')->nullable();
+            $table->string('coordinates')->nullable();
             $table->string('phone_number');
             $table->float('point')->default(0);
             $table->rememberToken();
