@@ -4,6 +4,27 @@
     height: 100vh;
     overflow: hidden;
 }
+/* Menghilangkan tampilan default pada checkbox */
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    /* Pastikan tidak ada background bawaan */
+    background-color: transparent;
+  }
+  
+  /* Aturan untuk tampilan saat checkbox dicentang */
+  input[type="checkbox"]:checked {
+    background-color: lightgreen;
+    border-color: lightgreen;
+  }
 
 .stack-1 {
     position: absolute;

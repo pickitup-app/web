@@ -8,8 +8,7 @@ use App\Http\Controllers\TrashController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\BagController;
 
-
-Route::get('/',[UserController::class,'index']);
+Route::get('/',[UserController::class,'home']);
 
 Route::get('/login',[UserController::class,'loginpage']);
 

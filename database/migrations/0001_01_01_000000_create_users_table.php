@@ -18,10 +18,16 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('role')->default('user');
-            $table->string('address')->nullable();
+            $table->string('street_name')->nullable();
+            $table->string('rt')->nullable();
+            $table->string('rw')->nullable();
+            $table->integer('postal_code')->nullable();
             $table->string('coordinates')->nullable();
             $table->string('phone_number');
             $table->float('point')->default(0);
+            $table->boolean('is_subscribed')->default(false);
+            # Subscribe valid until
+            $table->timestamp('subscribed_until')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

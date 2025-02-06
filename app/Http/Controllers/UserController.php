@@ -13,7 +13,7 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function home()
     {
         return view('dashboard.home');
     }
@@ -64,7 +64,7 @@ class UserController extends Controller
 
     public function loginpage()
     {
-        return view('dashboard.login');
+        return view('dashboard.loginpage');
     }
 
     public function login(Request $request)
