@@ -14,8 +14,12 @@ class Order extends Model
     // Declares protected variables
     protected $guarded=['id'];
 
-
     // Declare Eloquent Relationship
+    public function tracks()
+    {
+        return $this->hasMany(Track::class);
+    }
+    
     public function trashes(): HasMany
     {
         return $this->hasMany(Trash::class);

@@ -46,6 +46,33 @@ class MobileController extends Controller
         ],200);
     }
 
+    public function getUserOrders(Request $request)
+    {
+        // Mengambil user yang sedang diautentikasi
+        $user = $request->user();
+
+        // Mengambil semua order yang dimiliki oleh user yang diautentikasi
+        $orders = Order::where('user_id', $user->id)->get();
+
+        // Mengembalikan response JSON berisi data orders
+        return response()->json([
+            'data' => $orders
+        ]);
+    }
+    
+    public function getOrderStatus(Request $request)
+    {
+        $request->validate([
+            'order_id' => 'required|exists:orders,id',
+        ]);
+
+        $order = Order::find($request->order_id);
+
+        return response()->json([
+            'status' => $order->tracks,
+        ]);
+    }
+
     public function register(Request $request)
     {
         $request->validate([
@@ -86,11 +113,19 @@ class MobileController extends Controller
         ],200);
     }
 
-    public function isUserSubscribed(Request $request)
+    public function isSubscribed(Request $request)
     {
+        // Ensure the user is authenticated
+        $user = $request->user();
+        if (!$user) {
+            return response()->json([
+                'message' => 'User not authenticated.'
+            ], 401);
+        }
+
         return response()->json([
-            'is_subscribed' => $request->user()->is_subscribed,
-            'subscribed_until' => $request->user()->subscribed_until,
+            'is_subscribed' => $user->is_subscribed ? true : false,
+            // 'subscribed_until' => $user->subscribed_until,
         ]);
     }
 
@@ -135,6 +170,23 @@ class MobileController extends Controller
             'subscribed_until' => now()->addMonth(),
         ]);
 
+        // Jadwal Pengambilan: Senin, Rabu, Jumat, Minggu
+        $startDate = now();
+        $endDate = now()->addMonth();
+
+        while ($startDate->lessThanOrEqualTo($endDate)) {
+            if (in_array($startDate->dayOfWeek, [0,1,3,5])) { // 0=Sunday,1=Monday,3=Wednesday,5=Friday
+                Order::create([
+                    'user_id' => $user->id,
+                    'driver_id' => null,
+                    'is_urgent' => false,
+                    'status' => 'scheduled',
+                    'order_date' => $startDate,
+                ]);
+            }
+            $startDate->addDay();
+        }
+
         // Update the user record in a single call.
         $user->update($updateData);
 
@@ -147,7 +199,32 @@ class MobileController extends Controller
 
     public function getUser(Request $request)
     {
-        return $request->user();
+        $user = $request->user();
+
+        if (!$user) {
+            return response()->json([
+                'success' => false,
+                'message' => 'User not authenticated',
+            ], 401);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'User profile successfully retrieved',
+            'data' => [
+                'id'              => $user->id,
+                'name'            => $user->name,
+                'email'           => $user->email,
+                'phone_number'    => $user->phone_number,
+                'street_name'     => $user->street_name,
+                'rt'              => $user->rt,
+                'rw'              => $user->rw,
+                'postal_code'     => $user->postal_code,
+                'point'           => $user->point,
+                'is_subscribed'   => $user->is_subscribed,
+                'subscribed_until'=> $user->subscribed_until,
+            ],
+        ]);
     }
 
     public function subscribeUser(Request $request)

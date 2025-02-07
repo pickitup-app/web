@@ -191,6 +191,7 @@
                             <h2>Done</h2>
                             <img src="{{ asset('img/done-icon.png') }}" alt="done-icon">
                         </div>
+                        <a href="" class="btn btn-warning">Picked Up at 09.00</a>
                     </div>
                     <div class="detail-schedule">
                         <div class="date-type">
@@ -201,6 +202,7 @@
                             {{-- <h2>Done</h2>
                             <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
                         </div>
+                        <a href="" class="btn btn-warning">Assigned</a>
                     </div>
                     <div class="detail-schedule">
                         <div class="date-type">
@@ -211,6 +213,8 @@
                             {{-- <h2>Done</h2>
                             <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
                         </div>
+                        <a href="" class="btn btn-warning">Assign Driver</a>
+
                     </div>
                     <div class="detail-schedule">
                         <div class="date-type">
