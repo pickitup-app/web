@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Track;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +17,13 @@ class UserController extends Controller
      */
     public function home()
     {
-        return view('dashboard.home');
+        // Count the number of User with the role of user
+        $users = User::where('role','user')->count();
+        // Count the number of User with the role of driver
+        $drivers = User::where('role','driver')->count();
+        // Count the number of Orders with the status of completed
+        $orders = Order::where('status','completed')->count();
+        return view('dashboard.home',compact('users','drivers','orders'));
     }
 
     public function adduser()
@@ -55,11 +63,33 @@ class UserController extends Controller
         return view('dashboard.driverdata');
     }
 
-    public function assigndriver()
+    public function assigndriver(Order $order)
     {
-        return view('dashboard.assigndriver');
+        $user = $order->user;
+        $drivers = User::where('role','driver')->get();
+        return view('dashboard.assigndriver', compact('order','user','drivers'));
     }
 
+    public function searchdriver(Request $request, Order $order)
+    {
+        $user = $order->user;
+        $drivers = User::where('role','driver')->where('name','like','%'.$request->search.'%')->get();
+        return view('dashboard.assigndriver', compact('order','user','drivers'));
+    }
+
+    public function assigndriveraction (Order $order, Request $request)
+    {
+        $order->driver_id = request('driver_id');
+        $order->save();
+
+        $track = new Track;
+        $track->order_id = $order->id;
+
+        $driver = User::find($order->driver_id);
+        $track->status = 'Driver assigned, and is on the way. Drivers name: '.$driver->name;
+        $track->save();
+        return redirect('/pickupschedule/'.$order->user->id);
+    }
     // Login
 
     public function loginpage()

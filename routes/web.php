@@ -24,7 +24,15 @@ Route::get('/see-points',[UserController::class,'seepoints']);
 Route::get('/adddriver',[UserController::class,'adddriver']);
 Route::get('/editdriver',[UserController::class,'editdriver']);
 Route::get('/driverdata',[UserController::class,'driverdata']);
-Route::get('/assigndriver',[UserController::class,'assigndriver']);
+
+Route::get('/assigndriver/{order}',[UserController::class,'assigndriver']);
+Route::get('/assigndriver/{order}/search',[UserController::class,'searchdriver']);
+Route::post('/assigndriver/action/{order}',[UserController::class,'assigndriveraction']);
+
+
+Route::get('/pickupschedule/{user}', [OrderController::class,'index']);
+Route::get('/pickupschedule/', [OrderController::class,'handleRedirect']);
+
 
 Route::get('/adddop', function () {
     return view('dashboard.adddop');
@@ -48,9 +56,6 @@ Route::get('/trashinfo', function () {
     return view('dashboard.trashinfo');
 });
 
-Route::get('/pickupschedule', function () {
-    return view('dashboard.pickupschedule');
-});
 
 Route::get('/urgentpickup', function () {
     return view('dashboard.urgentpickup');

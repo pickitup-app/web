@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/trashinfo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pickupschedule.css') }}">
     <link rel="stylesheet" href="{{ asset('css/urgentpickup.css') }}">
-    @if (Request::is('assigndriver'))
+    @if (Request::is('assigndriver/*'))
         <link rel="stylesheet" href="{{ asset('css/assigndriver.css') }}">
     @endif
     {{-- Import Font Baloo Bhai 2 & Be Vietnam Pro --}}

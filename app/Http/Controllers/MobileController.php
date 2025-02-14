@@ -59,6 +59,20 @@ class MobileController extends Controller
             'data' => $orders
         ]);
     }
+
+    // get tracks given order_id
+    public function getTracks(Request $request)
+    {
+        $request->validate([
+            'order_id' => 'required|exists:orders,id',
+        ]);
+
+        $order = Order::find($request->order_id);
+
+        return response()->json([
+            'data' => $order->tracks,
+        ]);
+    }
     
     public function getOrderStatus(Request $request)
     {
@@ -268,6 +282,48 @@ class MobileController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Logout successful.',
+        ]);
+    }
+    
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'phone_number' => 'required|string',
+            'street_name' => 'required|string',
+            'rt' => 'required|string',
+            'rw' => 'required|string',
+            'postal_code' => 'required|string',
+        ]);
+
+        $user = $request->user();
+
+        $user->update($request->only('name', 'phone_number', 'street_name', 'rt', 'rw', 'postal_code'));
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Profile updated successfully.',
+        ]);
+    }
+
+    public function isPasswordValid(Request $request)
+    {
+        $request->validate([
+            'password' => 'required|string',
+        ]);
+
+        $user = $request->user();
+
+        if (!Hash::check($request->password, $user->password)) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Password is invalid.',
+            ], 401);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Password is valid.',
         ]);
     }
 }

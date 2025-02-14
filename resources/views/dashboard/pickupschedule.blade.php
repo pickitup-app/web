@@ -33,229 +33,52 @@
         </div>
         <div class="content-wrapper-pickup">
             <div class="list-user-pickup">
+            @foreach ($users as $usera)
+            <a href="/pickupschedule/{{ $usera->id }}" style="text-decoration: none; color: black;">
                 <div class="side-user">
                     <img src="{{ asset('img/dummyprofile.png') }}" alt="">
                     <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
+                        <h2 class="name">{{ $usera->name }}</h2>
+                        <h4 class="phone">{{ $usera->phone_number }}</h4>
                     </div>
                 </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-                <div class="side-user">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="name-phone">
-                        <h2 class="name">Jessica Mila</h2>
-                        <h4 class="phone">0895-4141-4331</h4>
-                    </div>
-                </div>
-
-                
+            </a>
+            @endforeach
 
 
             </div>
             <div class="detail-user-pickup">
                 <div class="detail-profile">
                     <div class="name-number">
-                        <h2>Jessica Mila</h2>
-                        <h4>0895-4141-4331</h4>
+                        <h2>{{ $user->name }}</h2>
+                        <h4>{{ $user->phone_number }}</h4>
                     </div>
                     <div class="profpic">
                         <img src="{{ asset('img/dummyprofile.png') }}" alt="">
                     </div>
                 </div>
                 <div class="list-schedule">
-                    <div class="detail-schedule1">
+                    @foreach ($orders as $order)
+                    <div class="{{ $order->status==="completed"? 'detail-schedule1' : 'detail-schedule' }}">
                         <div class="date-type">
-                            <h3>1 December 2024</h3>
+                            <h3>{{ $order->order_date }}</h3>
                             <h3>Regular Pick Up Schedule</h3>
                         </div>
+                        @if ($order->accepted_at!=null)
                         <div class="status-pickup">
-                            <h2>Done</h2>
+                            <h2> Done</h2>
                             <img src="{{ asset('img/done-icon.png') }}" alt="done-icon">
                         </div>
+                        @endif
+                        @if ($order->picked_up_at!=null)
                         <a href="" class="btn btn-warning">Picked Up at 09.00</a>
+                        @elseif ($order->driver_id == null)
+                        <a href="/assigndriver/{{ $order->id }}" class="btn btn-warning">Assign Driver</a>
+                        @else
+                        <a href="/assigndriver/{{ $order->id }}" class="btn btn-warning">Driver Assigned</a>
+                        @endif
                     </div>
-                    <div class="detail-schedule">
-                        <div class="date-type">
-                            <h3>1 December 2024</h3>
-                            <h3>Regular Pick Up Schedule</h3>
-                        </div>
-                        <div class="status-pickup">
-                            {{-- <h2>Done</h2>
-                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
-                        </div>
-                        <a href="" class="btn btn-warning">Assigned</a>
-                    </div>
-                    <div class="detail-schedule">
-                        <div class="date-type">
-                            <h3>1 December 2024</h3>
-                            <h3>Regular Pick Up Schedule</h3>
-                        </div>
-                        <div class="status-pickup">
-                            {{-- <h2>Done</h2>
-                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
-                        </div>
-                        <a href="" class="btn btn-warning">Assign Driver</a>
-
-                    </div>
-                    <div class="detail-schedule">
-                        <div class="date-type">
-                            <h3>1 December 2024</h3>
-                            <h3>Regular Pick Up Schedule</h3>
-                        </div>
-                        <div class="status-pickup">
-                            {{-- <h2>Done</h2>
-                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
-                        </div>
-                    </div>
-                    <div class="detail-schedule">
-                        <div class="date-type">
-                            <h3>1 December 2024</h3>
-                            <h3>Regular Pick Up Schedule</h3>
-                        </div>
-                        <div class="status-pickup">
-                            {{-- <h2>Done</h2>
-                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
-                        </div>
-                    </div>
-                    <div class="detail-schedule">
-                        <div class="date-type">
-                            <h3>1 December 2024</h3>
-                            <h3>Regular Pick Up Schedule</h3>
-                        </div>
-                        <div class="status-pickup">
-                            {{-- <h2>Done</h2>
-                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
-                        </div>
-                    </div>
-                    <div class="detail-schedule">
-                        <div class="date-type">
-                            <h3>1 December 2024</h3>
-                            <h3>Regular Pick Up Schedule</h3>
-                        </div>
-                        <div class="status-pickup">
-                            {{-- <h2>Done</h2>
-                            <img src="{{ asset('img/done-icon.png') }}" alt="done-icon"> --}}
-                        </div>
-                    </div>
+                    @endforeach
                     <div class="detail-schedule">
                         <div class="date-type">
                             <h3>1 December 2024</h3>

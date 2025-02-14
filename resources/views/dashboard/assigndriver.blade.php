@@ -3,29 +3,32 @@
 @section('content')
     <div class="assign-driver-wrapper">
         <h3 class="fw-bold">Assign Driver</h3>
-        <h3 class="fw-bold  mt-5">Customer Name: Jonathan</h3>
-
+        <h3 class="fw-bold mt-5">Customer Name: {{ $user->name }}</h3>
+        <p>Scheduled for: {{ $order->order_date }}</p>
         <div class="w-50">
-            <div class="search-driver">
-                <input type="text" name="" id="search-driver" placeholder="Search For Driver">
-                <img src="{{ asset('img\pickupstatus\assigndriver\material-symbols_find-replace-rounded.svg') }}" alt="">
-            </div>
-            <p class="text-right">Reload to find more drivers <img src="{{ asset('img\pickupstatus\assigndriver\icon-park-solid_attention.svg') }}" alt=""></p>
+            <form action="/assigndriver/{{ $order->id }}/search" method="get">
+                @csrf
+                <div class="search-driver">
+                    <input type="text" name="search" id="search-driver" placeholder="Search For Driver">
+                    <button class="btn" type="submit">
+                        <img src="{{ asset('img/pickupstatus/assigndriver/material-symbols_find-replace-rounded.svg') }}" alt="">
+                    </button>
+                </div>
+            </form>
+            <p class="text-right">Reload to find more drivers 
+                <img src="{{ asset('img/pickupstatus/assigndriver/icon-park-solid_attention.svg') }}" alt="">
+            </p>
         </div>
         
-        <form id="assign-driver-form" onsubmit="handleSubmit(event)">
-            <div class="driver-option" data-id="1" onclick="selectDriver(this)">
-                <h3>Driver 1</h3>
-                <h4>3 km away</h4>
-            </div>
-            <div class="driver-option" data-id="2" onclick="selectDriver(this)">
-              <h3>Driver 1</h3>
-              <h4>3 km away</h4>
-          </div>
-          <div class="driver-option" data-id="3" onclick="selectDriver(this)">
-            <h3>Driver 1</h3>
-            <h4>3 km away</h4>
-        </div>
+        <form id="assign-driver-form" method="post" action="/assigndriver/action/{{ $order->id }}">
+            @csrf
+            <!-- Hidden input untuk menyimpan driver_id -->
+            <input type="hidden" name="driver_id" id="driver_id">
+            @foreach ($drivers as $driver)
+                <div class="driver-option" data-id="{{ $driver->id }}" onclick="selectDriver(this)">
+                    <h3>{{ $driver->name }}</h3>
+                </div>
+            @endforeach
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -42,6 +45,9 @@
             // Set driver baru yang dipilih
             selectedDriver = element;
             selectedDriver.classList.add('selected');
+
+            // Update nilai hidden input dengan id driver yang dipilih
+            document.getElementById('driver_id').value = selectedDriver.getAttribute('data-id');
         }
 
         function handleSubmit(event) {
@@ -53,15 +59,14 @@
             }
 
             const driverId = selectedDriver.getAttribute('data-id');
-            alert('Selected Driver: ' + driverId);
-
-            // Kirim data yang dipilih via POST
             console.log('Selected Driver ID:', driverId);
-        }
 
-        function searchDriver() {
-            alert('Searching for drivers...');
-            // Simulasikan reload atau proses fetch data
+            // Lanjutkan submit form
+            event.target.submit();
         }
+        
+        // Jika ingin menggunakan handleSubmit pada submit form, 
+        // ganti <form id="assign-driver-form" method="post" ...> dengan onsubmit="handleSubmit(event)"
+        // dan pastikan submit hanya dilakukan bila driver sudah dipilih.
     </script>
 @endsection

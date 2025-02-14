@@ -3,16 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function handleRedirect() {
+        return redirect('/pickupschedule/1');
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(User $user)
     {
-        //
+        // Select all users
+        $users = User::all();
+        // Select all orders with the users (joined)
+        $orders = Order::where('user_id', $user->id)->get();
+
+        // Return the view with the orders
+        return view('dashboard.pickupschedule', compact('orders','users','user'));
     }
 
     /**

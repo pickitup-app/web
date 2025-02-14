@@ -180,11 +180,17 @@
     padding-left: 20px;
     border-radius: 20px;
     background-color: #C4E477;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .detail-schedule{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 30%;
     background-color: #D9D9D9;
     width: 90%;
@@ -192,6 +198,11 @@
     padding: 10px;
     padding-left: 20px;
     border-radius: 20px;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .date-type h3{

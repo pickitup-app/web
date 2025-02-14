@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders');
-            $table->string('description');
-            $table->timestamp('created_at')->useCurrent();
+            $table->string('status');
+            // $table->timestamp('created_at')->useCurrent();
             $table->timestamps();
         });
     }
