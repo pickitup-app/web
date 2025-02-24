@@ -6,12 +6,12 @@
     <div class="header-seepoints">
         <div class="account-information">
             <h3>Account Information</h3>
-            <h3>Email : jonathan@gmail.com</h3>
-            <h3>Address : Mango Street</h3>
+            <h3>Email : {{ $user->email }}</h3>
+            <h3>Address : {{ $user->street_name }}</h3>
         </div>
         <div class="customer-points">
             <h3>Customer's Point</h3>
-            <h2>Jonathan Fortino</h2>
+            <h2>{{ $user->name }}</h2>
         </div>
     </div>
     <div class="main-seepoints">

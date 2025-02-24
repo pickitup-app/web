@@ -16,15 +16,22 @@ class OrderController extends Controller
      */
     public function index(User $user)
     {
-        // Select all users
-        $users = User::all();
-        // Select all orders with the users (joined)
-        $orders = Order::where('user_id', $user->id)->get();
+        // Select all users with the role of user and admin
+        $users = User::where('role','user')->orWhere('role','admin')->get();
+        // Select all orders with the users (joined) and is_urgent = 0 and the date is more than current Date and the user_id = $user->id
+        $orders = Order::with('user')->where('is_urgent',0)->where('order_date','>=',date('Y-m-d'))->where('user_id',$user->id)->get();
 
         // Return the view with the orders
         return view('dashboard.pickupschedule', compact('orders','users','user'));
     }
 
+    public function urgentpickup()
+    {
+        // Sellect all users and orders with the users (joined) and is_urgent = 1
+        $users = User::all();
+        $orders = Order::with('user')->where('is_urgent',1)->get();
+        return view('dashboard.urgentpickup',compact('orders','users'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -71,5 +78,23 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+    public function pickupstatus()
+    {
+        // The number of users with the role of user
+        $user = User::where('role','user')->count();
+        // The number of users with the role of driver
+        $driver = User::where('role','driver')->count();
+
+        // The total number of orders
+        $totalOrders = Order::count();
+
+        // The number of orders with is_urgent = 1
+        $urgentOrders = Order::where('is_urgent',1)->count();
+
+        // The number of orders where is_urgent = 0
+        $normalOrders = Order::where('is_urgent',0)->count();
+
+        return view('dashboard.pickupstatus',compact('user','driver','totalOrders','urgentOrders','normalOrders'));
     }
 }

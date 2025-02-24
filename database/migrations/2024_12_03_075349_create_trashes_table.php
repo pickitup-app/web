@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('trashes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
-            $table->foreignId('bag_code');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');;
+            $table->string('category')->nullable();
             $table->float('weight')->default(0);
-            $table->boolean('is_completed');
+            $table->float('point')->default(null);
+            $table->boolean('is_completed')->nullable();
             $table->timestamps();
         });
     }

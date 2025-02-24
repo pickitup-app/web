@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function deleteuser(User $user)
+    {
+        $user->delete();
+        return redirect('/userdata');
+    }
     /**
      * Display a listing of the resource.
      */
@@ -23,7 +28,10 @@ class UserController extends Controller
         $drivers = User::where('role','driver')->count();
         // Count the number of Orders with the status of completed
         $orders = Order::where('status','completed')->count();
-        return view('dashboard.home',compact('users','drivers','orders'));
+
+        // Count the number of User with the role of admin
+        $admins = User::where('role','admin')->count();
+        return view('dashboard.home',compact('users','drivers','orders','admins'));
     }
 
     public function adduser()
@@ -31,19 +39,34 @@ class UserController extends Controller
         return view('dashboard.adduser');
     }
 
-    public function edituser()
+    public function edituser(User $user)
     {
-        return view('dashboard.edituser');
+        return view('dashboard.edituser',compact('user'));
+    }
+
+    public function updateuser(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->phone_number = request('phone_number');
+        $user->street_name = request('street_name');
+        $user->rt = request('rt');
+        $user->rw = request('rw');
+        $user->save();
+        return redirect('/userdata');
     }
 
     public function userdata()
     {
-        return view('dashboard.userdata');
+        $users = User::where('role','user')->get();
+        return view('dashboard.userdata', compact('users'));
     }
 
-    public function seepoints()
+    public function seepoints(User $user)
     {
-        return view('dashboard.user-seepoints');
+        $trashes = $user->trashes;   
+        return view('dashboard.user-seepoints',compact('user','trashes'));
     }
 
     // Driver
@@ -60,7 +83,8 @@ class UserController extends Controller
 
     public function driverdata()
     {
-        return view('dashboard.driverdata');
+        $drivers = User::where('role','driver')->get();
+        return view('dashboard.driverdata', compact('drivers'));
     }
 
     public function assigndriver(Order $order)
@@ -80,12 +104,17 @@ class UserController extends Controller
     public function assigndriveraction (Order $order, Request $request)
     {
         $order->driver_id = request('driver_id');
+        if ($order->is_urgent != 1) {
+            $order->time_slot=null;
+        }
         $order->save();
 
         $track = new Track;
         $track->order_id = $order->id;
 
         $driver = User::find($order->driver_id);
+
+
         $track->status = 'Driver assigned, and is on the way. Drivers name: '.$driver->name;
         $track->save();
         return redirect('/pickupschedule/'.$order->user->id);
@@ -97,17 +126,17 @@ class UserController extends Controller
         return view('dashboard.loginpage');
     }
 
-    public function login(Request $request)
+    public function loginaction(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
+        // $request->validate([
+        //     'email' => 'required|email',
+        //     'password' => 'required'
+        // ]);
 
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
-                // if login success
+            return redirect('/');
         } else {
-            //login failed
+            dd($request->all());
         }
         
     }

@@ -14,7 +14,7 @@
                 </button>
             </div>
             <div class="area-section">
-                <div class="dropdown province">
+                {{-- <div class="dropdown province">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{asset('img/location-icon.png')}}" alt="">
                         <h5>Province</h5>
@@ -43,8 +43,7 @@
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="#">Separated link</a></li>
                     </ul>
-                  </div>
-
+                  </div>--}}
             </div>
             <div class="add-new-driver">
                 <h3>Add New Driver</h3>
@@ -65,207 +64,18 @@
                     <td class="fw-bold header-font">Edit</td>
                     <td class="fw-bold header-font">Delete</td>
                 </th>
+                @foreach ($drivers as $driver)
                 <tr>
                     <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
+                    <td class="data-font">{{ $driver->id }}</td>
+                    <td class="data-font">{{ $driver->name }}</td>
+                    <td class="data-font">{{ $driver->street_name }}</td>
+                    <td class="data-font">{{ $driver->email }}</td>
+                    <td class="data-font">{{ $driver->phone_number }}</td>
                     <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
                     <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="data-font">C-123</td>
-                    <td class="data-font">Elisabeth</td>
-                    <td class="data-font">Mango Street</td>
-                    <td class="data-font">jonathan@gmail.com</td>
-                    <td class="data-font">08123456789</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
-                </tr>
-
+                @endforeach
             </table>
         </div>
     </div>

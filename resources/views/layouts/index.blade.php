@@ -44,25 +44,17 @@
                     <li class="nav-item d-none d-md-block wrap-icon"> <a href="#" class="nav-link"><img src="{{ asset('img/Logo-navbar.png')}}" alt="" class="piu-icon"></a> </li>
                     <li class="nav-item d-none d-md-block"> <a href="#" class="nav-link"><img src="{{asset('img/piu-title.png')}}" alt="" class="piu-title"></a> </li>
                 </ul> <!--end::Start Navbar Links--> <!--begin::End Navbar Links-->
-                <ul class="navbar-nav ms-auto"> <!--begin::Navbar Search-->
-                    <li class="nav-item"> <a class="nav-link" data-widget="navbar-search" href="#" role="button"> <i class="bi bi-search"></i> </a> </li> <!--end::Navbar Search--> 
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item"> <a class="nav-link" href="#" data-lte-toggle="fullscreen"> <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i> <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none;"></i> </a> </li> <!--end::Fullscreen Toggle--> <!--begin::User Menu Dropdown-->
-                    <li class="nav-item dropdown user-menu profile-wrap"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="{{asset('img/dummyprofile.png')}}" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">John David</span> <img src="{{ asset('img/arrow-down.svg') }}" alt="" class="arrow-down"> </a>
+                    <li class="nav-item dropdown user-menu profile-wrap"> <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img src="{{asset('img/dummyprofile.png')}}" class="user-image rounded-circle shadow" alt="User Image"> <span class="d-none d-md-inline">{{ auth()->user()->name }}</span> <img src="{{ asset('img/arrow-down.svg') }}" alt="" class="arrow-down"> </a>
                         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end"> <!--begin::User Image-->
                             <li class="user-header bg-custom-primary"> <img src="{{ asset('img/dummyprofile.png') }}" class="rounded-circle shadow" alt="User Image">
                                 <p>
-                                    John David - Web Developer
-                                    <small>Member since Nov. 2023</small>
+                                    {{ auth()->user()->name }}
+                                    <small>Administrator</small>
                                 </p>
                             </li> <!--end::User Image--> <!--begin::Menu Body-->
-                            <li class="user-body bg-light"> <!--begin::Row-->
-                                <div class="row">
-                                    <div class="col-4 text-center"> <a href="#">Followers</a> </div>
-                                    <div class="col-4 text-center"> <a href="#">Sales</a> </div>
-                                    <div class="col-4 text-center"> <a href="#">Friends</a> </div>
-                                </div> <!--end::Row-->
-                            </li> <!--end::Menu Body--> <!--begin::Menu Footer-->
-                            <li class="user-footer bg-light"> <a href="#" class="btn btn-default btn-flat">Profile</a> <a href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
+                            <li class="d-flex justify-content-center align-items-center"> <a href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
                         </ul>
                     </li> <!--end::User Menu Dropdown-->
                 </ul> <!--end::End Navbar Links-->
@@ -77,7 +69,7 @@
                     <!--end::Brand Image--> 
                     <!--begin::Brand Text--> 
                     <span class="brand-text fw-light">
-                        John David
+                        {{ auth()->user()->name }}
                         <span class="online-tag"><img src="{{ asset('img/online-dot.svg') }}" alt=""> <p>Online</p></span>
                     </span> <!--end::Brand Text-->
                     
@@ -90,49 +82,49 @@
                     </div>
                     <hr style="border: 2px solid #628A4C; opacity:1" class="m-0">
                     <ul class="nav sidebar-menu flex-column sidebar-custom" data-lte-toggle="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item active"> 
+                        <li class="nav-item {{ request()->is('/') ? 'active' : '' }}"> 
                             <a href="/" class="nav-link"> 
                                 <img src="{{ asset('img/dashboard/dashboard.svg') }}" alt="">
                                 <p>Dashboard</p>
                             </a> 
                         </li>
-                        <li class="nav-item"> 
+                        <li class="nav-item {{ request()->is('userdata') ? 'active' : '' }}"> 
                             <a href="/userdata" class="nav-link">
                                 <img src="{{ asset('img/dashboard/user.svg') }}" alt="">
                                 <p>User Data</p>
                             </a> 
                         </li>
-                        <li class="nav-item"> 
+                        <li class="nav-item {{ request()->is('driverdata') ? 'active' : '' }}"> 
                             <a href="/driverdata" class="nav-link">
                                 <img src="{{ asset('img/dashboard/healthtruck.svg') }}" alt="">
                                 <p>Driver Data</p>
                             </a> 
                         </li>
-                        <li class="nav-item"> 
+                        <li class="nav-item {{ request()->is('pickupschedule/*') ? 'active' : '' }}"> 
                             <a href="/pickupschedule" class="nav-link">
                                 <img src="{{ asset('img/dashboard/clock.svg') }}" alt="">
                                 <p>Pick-Up Schedule</p>
                             </a> 
                         </li>
-                        <li class="nav-item"> 
+                        <li class="nav-item {{ request()->is('urgentpickup') ? 'active' : '' }}"> 
                             <a href="/urgentpickup" class="nav-link">
                                 <img src="{{ asset('img/dashboard/bell.svg') }}" alt="">
                                 <p>Urgent Pick-Up</p>
                             </a> 
                         </li>
-                        <li class="nav-item"> 
+                        <li class="nav-item {{ request()->is('dropoffpoint') ? 'active' : '' }}"> 
                             <a href="/dropoffpoint" class="nav-link">
                                 <img src="{{ asset('img/dashboard/locations.svg') }}" alt="">
                                 <p>Drop-Off Point</p>
                             </a> 
                         </li>
-                        <li class="nav-item"> 
+                        <li class="nav-item {{ request()->is('pickupstatus') ? 'active' : '' }}"> 
                             <a href="/pickupstatus" class="nav-link">
                                 <img src="{{ asset('img/dashboard/status.svg') }}" alt="">
                                 <p>Pick-Up Status</p>
                             </a> 
                         </li>
-                        <li class="nav-item"> 
+                        <li class="nav-item {{ request()->is('trashinfo') ? 'active' : '' }}"> 
                             <a href="/trashinfo" class="nav-link"> 
                                 <img src="{{ asset('img/dashboard/calculator.svg') }}" alt="">
                                 <p>Trash Info</p>

@@ -25,19 +25,19 @@
                 <h2 class="login-title">Login</h2>
                 <p class="login-desc">Please enter your login details to log in.</p>
                 <hr class="line mt-4 mb-5">
-                <form action="/login" method="POST">
+                <form action="/login/post" method="POST">
                   @csrf
                   <div class="mb-4">
-                      <input type="email" class="form-control" placeholder="Email Address">
+                      <input type="email" class="form-control text-light" placeholder="Email Address" name="email">
                   </div>
-                  <div>
-                      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <div class="mb-3">
+                      <input type="password" class="form-control text-light" id="floatingPassword" placeholder="Password" name="password">
                   </div>
                   
-                  <div class="wrapper-text-login">
+                  {{-- <div class="wrapper-text-login">
                     <input class="form-check-input mt-0 me-4" type="checkbox" value="" aria-label="Checkbox for following text input">
                     <label class="keep-login">Keep me logged in</label>
-                  </div>
+                  </div> --}}
 
                   <button type="submit" class="btn btn-primary btn-login">Log In</button>
                 </form>

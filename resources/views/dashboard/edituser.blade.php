@@ -3,25 +3,37 @@
 @section('content')
 
 <div class="form-wrapper">
+    <form action="/edituser/put" method="POST">
+        @method('PUT')
+        @csrf
+        <input type="hidden" name="id" value="{{ $user->id }}">
     <h1 class="form-title">EDIT USER DATA</h1>
     <hr class="line-au">
     <div class="form">
+        
         <div class="form-control">
             <h2 class="input-name">Name</h2>
-            <input type="text" placeholder="Enter your full name">
+            <input type="text" placeholder="Enter your full name" name="name" value="{{ $user->name }}">
             <h2 class="input-name">Email</h2>
-            <input type="text" placeholder="Enter a valid email address">
+            <input type="text" placeholder="Enter a valid email address" name="email" value="{{ $user->email }}">
+            <h2 class="input-name">RT</h2>
+            <input type="number" name="rt" id="rt" value="{{ $user->rt }}">
         </div>
         <div class="form-control">
             <h2 class="input-name">Phone Number</h2>
-            <input type="text" placeholder="Enter your phone number">
-            <h2 class="input-name">Address</h2>
-            <input type="text" placeholder="House number, street name, and postal">
+            <input type="text" placeholder="Enter your phone number" name="phone_number" value="{{ $user->phone_number }}">
+            <h2 class="input-name">Street Name</h2>
+            <input type="text" placeholder="Enter your street name here" name="street_name" value="{{ $user->street_name }}">
+            
+            <h2 class="input-name">RW</h2>
+            <input type="number" name="rw" id="rw" value="{{ $user->rw }}">
         </div>
+        
     </div>
     <div class="submit-wrapper">
         <button class="submit-button">Submit</button>
     </div>
+</form>
 </div>
     
 @endsection

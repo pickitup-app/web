@@ -10,22 +10,22 @@
         <div class="container wrapper-content">
             <div class="card-content d-flex flex-column shadow">
                 <img src="{{ asset('./img/home-icon/person.svg') }}" alt="">
-                <h3>2500</h3>
+                <h3>{{ $users }}</h3>
                 <p class="text-gray">Users Registered</p>
             </div>
             <div class="card-content d-flex flex-column shadow">
                 <img src="{{ asset('./img/home-icon/checklist.svg') }}" alt="">
-                <h3>125</h3>
+                <h3>{{ $orders }}</h3>
                 <p class="text-gray">Orders Completed</p>
             </div>
             <div class="card-content d-flex flex-column shadow">
                 <img src="{{ asset('./img/home-icon/truckdriver.svg') }}" alt="">
-                <h3>1805</h3>
+                <h3>{{ $drivers }}</h3>
                 <p class="text-gray">Drivers Registered</p>
             </div>
             <div class="card-content d-flex flex-column shadow">
                 <img src="{{ asset('./img/home-icon/admin.svg') }}" alt="">
-                <h3>5</h3>
+                <h3>{{ $admins }}</h3>
                 <p class="text-gray">Admins Registered</p>
             </div>
         </div>

@@ -46,6 +46,32 @@ class MobileController extends Controller
         ],200);
     }
 
+    public function submitUrgentPickup(Request $request)
+    {
+        $request->validate([
+            'category' => 'required|string',
+            'address' => 'required|string',
+            'driver_id' => 'required|exists:users,id',
+        ]);
+
+        $order = Order::create([
+            'user_id' => $request->user()->id,
+            'category' => "Urgent Pickup",
+            'address' => auth()->user()->address,
+            'driver_id' => null,
+            'time_slot' => $request->time_slot,
+            'order_date' => now(),
+            'is_urgent' => true,
+            'status' => 'scheduled',
+        ]);
+
+        // Proses order
+        return response()->json([
+            'success' => true,
+            'message' => 'Order successful.',
+        ]);
+    }
+
     public function getUserOrders(Request $request)
     {
         // Mengambil user yang sedang diautentikasi

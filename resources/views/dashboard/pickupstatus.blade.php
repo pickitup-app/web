@@ -11,13 +11,13 @@
             <div class="child-wrapper shadow">
                 <div class="child-card">
                     <img src="{{ asset('img\pickupstatus\solar_user-broken.svg') }}" alt="">
-                    <h3>22.944</h3>
-                    <p>Users Online</p>
+                    <h3>{{ $user }}</h3>
+                    <p>Users Registered</p>
                 </div>
                 <div class="child-card">
                     <img src="{{ asset('img\pickupstatus\healthicons_truck-driver (1).svg') }}" alt="">
-                    <h3>3.044</h3>
-                    <p>Drivers Online</p>
+                    <h3>{{ $driver }}</h3>
+                    <p>Drivers Registered</p>
                 </div>
             </div>
             <div class="child-wrapper d-flex flex-column justify-content-start right-wrapper">
@@ -25,20 +25,20 @@
                     <div class="d-flex flex-row w-100 justify-content-center align-items-center">
                         <div class="section-right">
                             <img src="{{ asset('img\pickupstatus\fluent_alert-urgent-20-filled.svg') }}" alt="">
-                            <h4>124</h4>
+                            <h4>{{ $urgentOrders }}</h4>
                             <p>Urgent Pick Up</p>
                         </div>
                         <div class="vl"></div>
                         <div class="section-right">
                             <img src="{{ asset('img\pickupstatus\uil_schedule.svg') }}" alt="">
-                            <h4>20.345</h4>
+                            <h4>{{ $normalOrders }}</h4>
                             <p>Schedules Pick Up</p>
                         </div>
                     </div>
                 </div>
                 <div class="child-card-col custom-card-col shadow">
                     <h2>Total Orders</h2>
-                    <p>223.000.100</p>
+                    <p>{{ $totalOrders }}</p>
                 </div>
             </div>
         </div>

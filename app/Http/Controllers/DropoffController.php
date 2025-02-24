@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Trash;
+use App\Models\Dropoff;
 use Illuminate\Http\Request;
 
-class TrashController extends Controller
+class DropoffController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // Trash with its order
-        $trashes = Trash::with('order')->get();
-        return view('dashboard.trashinfo',compact('trashes'));
+        //
     }
 
     /**
@@ -36,7 +34,7 @@ class TrashController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Trash $trash)
+    public function show(Dropoff $dropoff)
     {
         //
     }
@@ -44,7 +42,7 @@ class TrashController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Trash $trash)
+    public function edit(Dropoff $dropoff)
     {
         //
     }
@@ -52,7 +50,7 @@ class TrashController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Trash $trash)
+    public function update(Request $request, Dropoff $dropoff)
     {
         //
     }
@@ -60,7 +58,7 @@ class TrashController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Trash $trash)
+    public function destroy(Dropoff $dropoff)
     {
         //
     }

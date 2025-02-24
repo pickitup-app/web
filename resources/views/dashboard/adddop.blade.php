@@ -7,6 +7,8 @@
     <hr class="line-au">
     <div class="form">
         <div class="form-control">
+            <h2 class="input-name">Drop Off Name:</h2>
+            <input type="text" name="" id="" placeholder="Enter your drop off name">
             <h2 class="input-name">Street Address</h2>
             <input type="text" placeholder="Enter your street address">
             <h2 class="input-name">RW</h2>
