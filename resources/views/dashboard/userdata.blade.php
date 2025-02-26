@@ -7,18 +7,23 @@
     
     <div class="data-wrapper">
         <div class="header-data">
-            <div class="search-section">
-                <input type="text" placeholder="Search here...">
-                <button>
+            <form action="/userdata" method="get" class="search-section">
+                @csrf
+                <input type="text" placeholder="Search here..." name="search">
+                <button type="submit">
                     <img src="{{asset('img/search-icon.png')}}" alt="search-icon">
                 </button>
-            </div>
+            </form>
+            <a href="/adduser">
             <div class="add-new-user">
+                
                 <h3>Add New User</h3>
-                <div class="add-icon">
+                    <div class="add-icon">
                     <img src="{{asset('img/add-icon.png')}}" alt="add-icon">
                 </div>
+                
             </div>
+        </a>
 
         </div>
         <div class="table-wrapper">
@@ -41,7 +46,7 @@
                     <td class="data-font">{{ $user->email }}</td>
                     <td class="data-font"><a class="data-button edit-button" href="/edituser/{{ $user->id }}" alt="edit-icon"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></a></td>
                     <td class="data-font"><a class="data-button delete-button" href="/delete/{{ $user->id }}"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></a></td>
-                    <td class="data-font"><a class="data-button btn points-button">See points..</a></td>
+                    <td class="data-font"><a class="data-button btn points-button" href="/see-points/{{ $user->id }}">See points..</a></td>
                 </tr>
                 @endforeach
             </table>

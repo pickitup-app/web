@@ -39,6 +39,31 @@ class UserController extends Controller
         return view('dashboard.adduser');
     }
 
+    public function adduserpost(Request $request)
+    {
+        // Validate the request: required, phone_number must be numeric and 11-13 digit
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone_number' => 'required|numeric|digits_between:11,13',
+            'street_name' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
+        ]);
+
+        $user = new User;
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->phone_number = request('phone_number');
+        $user->street_name = request('street_name');
+        $user->rt = request('rt');
+        $user->rw = request('rw');
+        $user->role = 'user';
+        $user->password = bcrypt('password');
+        $user->save();
+        return redirect('/userdata');
+    }
+
     public function edituser(User $user)
     {
         return view('dashboard.edituser',compact('user'));
@@ -46,6 +71,16 @@ class UserController extends Controller
 
     public function updateuser(Request $request)
     {
+        // Validate request: all required, number must be numeric and length between 11-13 digits
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone_number' => 'required|numeric|digits_between:11,13',
+            'street_name' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
+        ]);
+
         $user = User::find($request->id);
         $user->name = request('name');
         $user->email = request('email');
@@ -57,15 +92,22 @@ class UserController extends Controller
         return redirect('/userdata');
     }
 
-    public function userdata()
+    public function userdata(Request $request)
     {
-        $users = User::where('role','user')->get();
-        return view('dashboard.userdata', compact('users'));
+        // if request exist then search for the user based on the name
+        if ($request->search) {
+            $users = User::where('role','user')->where('name','like','%'.$request->search.'%')->get();
+            return view('dashboard.userdata', compact('users'));
+        } else {
+            $users = User::where('role','user')->get();
+            return view('dashboard.userdata', compact('users'));
+        }
     }
 
     public function seepoints(User $user)
     {
-        $trashes = $user->trashes;   
+        // Join user with orders and get the trash based on order id
+        $trashes = $user->orders()->join('trashes','orders.id','=','trashes.order_id')->get();
         return view('dashboard.user-seepoints',compact('user','trashes'));
     }
 

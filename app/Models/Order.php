@@ -24,9 +24,9 @@ class Order extends Model
         return $this->hasMany(Track::class);
     }
     
-    public function trash(): belongsTo
+    public function trash(): hasOne
     {
-        return $this->belongsTo(Trash::class);
+        return $this->hasOne(Trash::class);
     }
 
     public function invoice(): HasOne

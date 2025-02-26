@@ -13,6 +13,7 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/',[UserController::class,'home']);
     Route::get('/pickupstatus', [OrderController::class,'pickupstatus']);
     Route::get('/adduser',[UserController::class,'adduser']);
+    Route::post('/adduser/post',[UserController::class,'adduserpost']);
     Route::get('/edituser/{user}',[UserController::class,'edituser']);
     Route::put('/edituser/put',[UserController::class,'updateuser']);
     Route::get('/userdata',[UserController::class,'userdata']);

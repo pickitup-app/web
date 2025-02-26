@@ -21,22 +21,13 @@
             <h2 class="column3">Points</h2>
         </div>
         <div class="row-content">
+            @foreach ($trashes as $trash)
             <div class="row1">
-                <h2 class="column1">Plastic Bottle</h2>
-                <h2 class="column2">20/12/2024 20:30:40</h2>
-                <h2 class="column3">130</h2>
+                <h2 class="column1">{{ $trash->category }}</h2>
+                <h2 class="column2">{{ $trash->created_at }}</h2>
+                <h2 class="column3">{{ $trash->point }}</h2>
             </div>
-            <div class="row2">
-                <h2 class="column1">Plastic Bottle</h2>
-                <h2 class="column2">20/12/2024 20:30:40</h2>
-                <h2 class="column3">130</h2>
-            </div>
-            <div class="row3">
-                <h2 class="column1">Plastic Bottle</h2>
-                <h2 class="column2">20/12/2024 20:30:40</h2>
-                <h2 class="column3">130</h2>
-            </div>
-
+            @endforeach
         </div>
         {{-- <div class="row-content">
             <div class="column1">
