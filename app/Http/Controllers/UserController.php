@@ -45,7 +45,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'phone_number' => 'required|numeric|digits_between:11,13',
+            'phone_number' => 'required|numeric|digits_between:11,13|unique:users',
             'street_name' => 'required',
             'rt' => 'required',
             'rw' => 'required',
@@ -115,17 +115,45 @@ class UserController extends Controller
 
     public function adddriver()
     {
+
         return view('dashboard.adddriver');
     }
 
-    public function editdriver()
+    public function adddriverpost(Request $request) {
+        // Insert driver to users
+        $user = new User;
+        $user->name = request('name');
+        $user->email = request('email');
+        $user->phone_number = request('phone_number');
+        $user->role = 'driver';
+        $user->password = bcrypt('password');
+        $user->rt=request('rt');
+        $user->rw=request('rw');
+        $user->street_name=request('street_name');
+        $user->save();
+        return redirect('/driverdata');
+    }
+
+    public function editdriver(User $user)
     {
-        return view('dashboard.editdriver');
+        return view('dashboard.editdriver',compact('user'));
+    }
+
+    public function deletedriver(User $user)
+    {
+        $user->delete();
+        return redirect('/driverdata');
     }
 
     public function driverdata()
     {
         $drivers = User::where('role','driver')->get();
+        return view('dashboard.driverdata', compact('drivers'));
+    }
+
+    public function searchdriverdata(Request $request)
+    {
+        $drivers = User::where('role','driver')->where('name','like','%'.$request->search.'%')->get();
         return view('dashboard.driverdata', compact('drivers'));
     }
 
@@ -178,56 +206,8 @@ class UserController extends Controller
         if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])) {
             return redirect('/');
         } else {
-            dd($request->all());
+            return redirect('/login')->with('error','Email or Password is incorrect');
         }
         
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

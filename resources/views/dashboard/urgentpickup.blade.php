@@ -67,28 +67,6 @@
                 </div>
             </div>
             @endforeach
-
-            <div class="indiv-card-urgent d-flex flex-row justify-content-space-between align-items-center w-100">
-                <div class="w-50 d-flex flex-row justify-content-start align-items-center gap-5">
-                    <img src="{{ asset('img/dummyprofile.png') }}" alt="">
-                    <div class="d-flex flex-column">
-                        <h3 class="w-100">Satria Mahathir</h3>
-                        <p class="w-100">Jl. Belalang Mati 123</p>
-                    </div>
-                </div>
-                <div class="w-50 d-flex flex-row justify-content-end align-items-center gap-3">
-                    <div class="d-flex flex-column">
-                        <h4 class="w-100">09.30 pm</h4>
-                        <p class="w-100 ur-completed">Taken</p>
-                    </div>
-    
-                    <div class="line-urgent"></div>
-    
-                    <button class="btn btn-warning btn-urpickup-completed">
-                        Assign Driver
-                    </button>
-                </div>
-            </div>
        </div>
     </div>
 

@@ -7,12 +7,12 @@
 
     <div class="data-wrapper">
         <div class="header-data">
-            <div class="search-section-driver">
-                <input type="text" placeholder="Search here...">
+            <form action="/driverdata/search" method="get" class="search-section-driver">
+                <input type="text" placeholder="Search here..." name="search">
                 <button>
                     <img src="{{asset('img/search-icon.png')}}" alt="search-icon">
                 </button>
-            </div>
+            </form>
             <div class="area-section">
                 {{-- <div class="dropdown province">
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,10 +46,12 @@
                   </div>--}}
             </div>
             <div class="add-new-driver">
-                <h3>Add New Driver</h3>
-                <div class="add-icon">
-                    <img src="{{asset('img/driver-icon.png')}}" alt="add-icon">
-                </div>
+                <a href="/adddriver" class="d-flex flex-row align-items-center">
+                    <h3 class="me-3">Add New Driver</h3>
+                    <div class="add-icon">
+                        <img src="{{asset('img/driver-icon.png')}}" alt="add-icon">
+                    </div>
+                </a>
             </div>
 
         </div>
@@ -72,8 +74,8 @@
                     <td class="data-font">{{ $driver->street_name }}</td>
                     <td class="data-font">{{ $driver->email }}</td>
                     <td class="data-font">{{ $driver->phone_number }}</td>
-                    <td class="data-font"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></td>
-                    <td class="data-font"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
+                    <td class="data-font"><a href="/editdriver/{{ $driver->id }}"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></a></td>
+                    <td class="data-font"><a href="/deletedriver/{{ $driver->id }}"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></a></td>
                 </tr>
                 @endforeach
             </table>

@@ -48,54 +48,42 @@
     <div class="container-fluid outer-content">
         <div class="container-fluid container-table-layer">
             <div class="outer-search">
-                <div class="search-bar">
-                    <input type="text" name="" id="" class="search-input" placeholder="Search">
+                <form class="search-bar" method="get" action="/pickupstatus">
+                    @csrf
+                    <input type="text" name="search" id="" class="search-input" placeholder="Search">
                     <button class="btn"><img src="{{ asset('img\pickupstatus\btn\Vector (6).svg ') }}" alt=""></button>
-                </div>
+                </form>
                 
-                <button class="btn btn-warning btn-urgent">Urgent <img src="{{ asset('img\pickupstatus\btn\fluent_alert-urgent-20-filled (1).svg') }}" alt=""></button>
-                <button class="btn btn-warning btn-urgent inactive">Schedule <img src="{{ asset('img\pickupstatus\btn\uil_schedule (1).svg') }}" alt=""></button>
+                <a href="/pickupstatus?urgent=1"><button class="btn btn-warning btn-urgent {{ request()->has('urgent') ? '' : 'inactive' }}">Urgent <img src="{{ asset('img\pickupstatus\btn\fluent_alert-urgent-20-filled (1).svg') }}" alt=""></button></a>
+                <a href="/pickupstatus?schedule=1"><button class="btn btn-warning btn-urgent {{ request()->has('schedule') ? '' : 'inactive' }}">Schedule <img src="{{ asset('img\pickupstatus\btn\uil_schedule (1).svg') }}" alt=""></button></a>
             </div>
             
 
             <div class="content-table">
                 <div class="card-table">
+                    @foreach($ordersData as $order)
                     <div class="card-content-table p-2">
                         <div class="d-flex flex-row justify-content-start align-items-center w-50 gap-4">
-                            <h2>01</h2>
+                            <h2>{{ $order->id }}</h2>
                             <div class="line-1"></div>
                             <div class="d-flex flex-column">
-                                <h4>Melisa Suprianti</h4>
-                                <p>Mango Street No. 1234</p>
+                                <h4>{{ $order->user->name }}</h4>
+                                <p>{{ $order->user->street_name }}</p>
                             </div>
                         </div>
                         
                         <div class="d-flex flex-row justify-content-space-around align-items-center w-50">
-                            <h3 class="w-50">Status : Urgent Pick Up</h3>
-                            <div class="w-50">                            
-                                <div class="status-pickup-div-progress">On Progress</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card-content-table p-2">
-                        <div class="d-flex flex-row justify-content-start align-items-center w-50 gap-4">
-                            <h2>01</h2>
-                            <div class="line-1"></div>
-                            <div class="d-flex flex-column">
-                                <h4>Jonathan</h4>
-                                <p>Mango Street No. 1234</p>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex flex-row justify-content-space-around align-items-center w-50">
-                            <h3 class="w-50">Status : Urgent Pick Up</h3>
-                            <div class="w-50">                            
+                            <h3 class="w-50">Status : {{ $order->is_urgent ? "Urgent Pick Up" : "Scheduled Order" }}</h3>
+                            <div class="w-50">
+                                @if ($order->status == 'completed')                            
                                 <div class="status-pickup-div-completed">Completed</div>
+                                @else
+                                <div class="status-pickup-div-progress">On Progress</div>
+                                @endif
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>

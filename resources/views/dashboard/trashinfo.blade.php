@@ -18,11 +18,11 @@
             @foreach ($trashes as $trash)
             <tr>
                 <td></td>
-                <td class="data-font">C-112</td>
-                <td class="data-font">Mellisa Christy</td>
-                <td class="data-font">Drop-Off</td>
-                <td class="data-font">-</td>
-                <td class="data-font"><button class="data-button btn points-button">Input now..</button></td>
+                <td class="data-font">{{ $trash->id }}</td>
+                <td class="data-font">{{ $trash->order->user->name }}</td>
+                <td class="data-font">{{ "Pick Up" }}</td>
+                <td class="data-font">{{ $trash->point }}</td>
+                <td class="data-font"><a href="/updatetrash/{{ $trash->id }}"><button class="data-button btn points-button">Input now..</button></a></td>
             </tr>
             @endforeach
             

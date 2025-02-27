@@ -118,7 +118,7 @@ class MobileController extends Controller
         $request->validate([
             'email' => 'required|email|unique:users',
             'name' => 'required|string|max:255',
-            'phone_number' => 'required|string',
+            'phone_number' => 'required|string|unique:users',
             'password' => 'required|string|min:6',
             'device_name' => 'required', // Pastikan device_name ada
         ]);

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');;
             $table->string('category')->nullable();
             $table->float('weight')->default(0);
-            $table->float('point')->default(null);
+            $table->float('point')->default(0);
+            $table->boolean('is_dropoff')->default(false);
             $table->boolean('is_completed')->nullable();
             $table->timestamps();
         });

@@ -2,28 +2,24 @@
 
 @section('content')
 
-<div class="form-wrapper">
+<form method="post" action="/dropoffpoint/add/post" class="form-wrapper">
+    @csrf
     <h1 class="form-title">ADD DROP-OFF POINT</h1>
     <hr class="line-au">
     <div class="form">
         <div class="form-control">
             <h2 class="input-name">Drop Off Name:</h2>
-            <input type="text" name="" id="" placeholder="Enter your drop off name">
-            <h2 class="input-name">Street Address</h2>
-            <input type="text" placeholder="Enter your street address">
-            <h2 class="input-name">RW</h2>
-            <input type="text" placeholder="Enter your community unit">
+            <input type="text" placeholder="Enter your drop off name" name="name">
+            
         </div>
         <div class="form-control">
-            <h2 class="input-name">RT</h2>
-            <input type="text" placeholder="Enter your neighborhood unit">
-            <h2 class="input-name">Postal Code</h2>
-            <input type="text" placeholder="Enter your area postal code">
+            <h2 class="input-name">Street Address</h2>
+            <input type="text" placeholder="Enter your street address" name="address">
         </div>
     </div>
     <div class="submit-wrapper">
-        <button class="submit-button">Submit</button>
+        <button type="submit" class="submit-button">Submit</button>
     </div>
-</div>
+</form>
     
 @endsection

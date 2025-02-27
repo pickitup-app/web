@@ -79,7 +79,7 @@ class OrderController extends Controller
     {
         //
     }
-    public function pickupstatus()
+    public function pickupstatus(Request $request)
     {
         // The number of users with the role of user
         $user = User::where('role','user')->count();
@@ -95,6 +95,23 @@ class OrderController extends Controller
         // The number of orders where is_urgent = 0
         $normalOrders = Order::where('is_urgent',0)->count();
 
-        return view('dashboard.pickupstatus',compact('user','driver','totalOrders','urgentOrders','normalOrders'));
+        if (request('search')) {
+            $searchTerm = request('search');
+            $ordersData = Order::with('user')
+            ->whereHas('user', function ($query) use ($searchTerm) {
+                $query->where('name', 'like', '%' . $searchTerm . '%');
+            })
+            ->orderBy('order_date', 'asc')
+            ->get();
+        } else {
+            // All orders but sorted from the closest order_date
+            $ordersData = Order::orderBy('order_date', 'asc')->get();
+        }
+        
+        if (request('urgent')) {
+            $ordersData = Order::Where('is_urgent',1)->orderBy('order_date','asc')->get();
+        }
+
+        return view('dashboard.pickupstatus',compact('user','driver','totalOrders','urgentOrders','normalOrders','ordersData'));
     }
 }

@@ -52,11 +52,23 @@ class TrashController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Trash $trash)
+    public function updatetrash(Trash $trash)
     {
-        //
+        return view('dashboard.updatetrash',compact('trash'));
     }
 
+    public function updateaction(Request $request, Trash $trash)
+    {
+        $trash->category = request('category');
+        $trash->weight = request('weight');
+        $trash->point = request('point');
+        $trash->save();
+
+        $user = $trash->order->user;
+        $user->point = $user->point += $trash->point;
+        $user->save();
+        return redirect('/trashinfo');
+    }
     /**
      * Remove the specified resource from storage.
      */

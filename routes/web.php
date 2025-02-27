@@ -7,6 +7,7 @@ use App\Http\Controllers\TrackController;
 use App\Http\Controllers\TrashController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\BagController;
+use App\Http\Controllers\DropoffController; 
 
 // Group Middleware
 Route::middleware(['admin'])->group(function () {
@@ -22,8 +23,11 @@ Route::middleware(['admin'])->group(function () {
 
 
     Route::get('/adddriver',[UserController::class,'adddriver']);
-    Route::get('/editdriver',[UserController::class,'editdriver']);
+    Route::post('/adddriver/post',[UserController::class,'adddriverpost']);
+    Route::get('/editdriver/{user}',[UserController::class,'editdriver']);
+    Route::get('/deletedriver/{user}',[UserController::class,'deletedriver']);
     Route::get('/driverdata',[UserController::class,'driverdata']);
+    Route::get('/driverdata/search',[UserController::class,'searchdriverdata']);
 
     Route::get('/assigndriver/{order}',[UserController::class,'assigndriver']);
     Route::get('/assigndriver/{order}/search',[UserController::class,'searchdriver']);
@@ -41,15 +45,18 @@ Route::middleware(['admin'])->group(function () {
         return view('dashboard.editdop');
     });
 
-    Route::get('/updatetrash', function () {
-        return view('dashboard.updatetrash');
-    });
+    Route::get('/updatetrash/{trash}', [TrashController::class,'updatetrash']);
+    Route::post('/updatetrash/post/{trash}', [TrashController::class,'updateaction']);
 
 
 
-    Route::get('/dropoffpoint', function () {
-        return view('dashboard.dropoffpoint');
-    });
+    Route::get('/dropoffpoint', [DropoffController::class,'index']);
+    Route::get('/dropoffpoint/add', [DropoffController::class,'create']);
+    Route::post('/dropoffpoint/add/post', [DropoffController::class,'store']);
+    Route::get('/dropoffpoint/edit/{dropoff}', [DropoffController::class,'edit']);
+    Route::put('/dropoffpoint/edit/{dropoff}', [DropoffController::class,'update']);
+    Route::get('/dropoffpoint/delete/{dropoff}', [DropoffController::class,'destroy']);
+
 
     Route::get('/trashinfo', [TrashController::class,'index']);
 

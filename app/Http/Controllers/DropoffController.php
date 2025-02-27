@@ -12,7 +12,9 @@ class DropoffController extends Controller
      */
     public function index()
     {
-        //
+        $dropoffs = Dropoff::all();
+        return view('dashboard.dropoffpoint', compact('dropoffs'));
+        // return view('dashboard.dropoffpoint');
     }
 
     /**
@@ -28,7 +30,11 @@ class DropoffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dropoff = new Dropoff;
+        $dropoff->name = request('name');
+        $dropoff->address = request('address');
+        $dropoff->save();
+        return redirect('/dropoffpoint');
     }
 
     /**
@@ -44,7 +50,7 @@ class DropoffController extends Controller
      */
     public function edit(Dropoff $dropoff)
     {
-        //
+        return view('dashboard.editdop', compact('dropoff'));
     }
 
     /**
@@ -52,7 +58,10 @@ class DropoffController extends Controller
      */
     public function update(Request $request, Dropoff $dropoff)
     {
-        //
+        $dropoff->name = request('name');
+        $dropoff->address = request('address');
+        $dropoff->save();
+        return redirect('/dropoffpoint');
     }
 
     /**
@@ -60,6 +69,7 @@ class DropoffController extends Controller
      */
     public function destroy(Dropoff $dropoff)
     {
-        //
+        $dropoff->delete();
+        return redirect('/dropoffpoint');
     }
 }

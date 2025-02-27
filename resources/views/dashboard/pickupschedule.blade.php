@@ -64,18 +64,16 @@
                             <h3>{{ $order->order_date }}</h3>
                             <h3>Regular Pick Up Schedule</h3>
                         </div>
-                        @if ($order->accepted_at!=null)
+                        @if ($order->status=='completed')
                         <div class="status-pickup">
                             <h2> Done</h2>
                             <img src="{{ asset('img/done-icon.png') }}" alt="done-icon">
                         </div>
                         @endif
-                        @if ($order->picked_up_at!=null)
-                        <a href="" class="btn btn-warning">Picked Up at 09.00</a>
-                        @elseif ($order->driver_id == null)
+                        @if ($order->driver_id == null)
                         <a href="/assigndriver/{{ $order->id }}" class="btn btn-warning">Assign Driver</a>
                         @else
-                        <a href="/assigndriver/{{ $order->id }}" class="btn btn-warning">Driver Assigned</a>
+                        <a href="" class="btn btn-warning">Driver Assigned</a>
                         @endif
                     </div>
                     @endforeach

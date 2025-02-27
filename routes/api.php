@@ -23,6 +23,8 @@ Route::post('/send-chat',[ChatController::class,'sendChat'])->middleware('auth:s
 // Drivers
 Route::get('/get-assigned-orders/{driver}',[MobileDriverController::class,'getAssignedOrders'])->middleware('auth:sanctum');
 Route::post('/complete-order/{order}',[MobileDriverController::class,'completeOrder'])->middleware('auth:sanctum');
+Route::post('/update-order-status/{order}', [MobileDriverController::class, 'updateOrderStatus']);
 
 // Urgent pickup system
 Route::post('/urgent-pickup',[MobileController::class,'submitUrgentPickup'])->middleware('auth:sanctum');
+

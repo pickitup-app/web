@@ -5,23 +5,30 @@
 <div class="form-wrapper">
     <h1 class="form-title">ADD NEW DRIVER</h1>
     <hr class="line-au">
-    <div class="form">
-        <div class="form-control">
-            <h2 class="input-name">Name</h2>
-            <input type="text" placeholder="Enter your full name">
-            <h2 class="input-name">Email</h2>
-            <input type="text" placeholder="Enter a valid email address">
+    <form action="/adddriver/post" method="post">
+        @csrf
+        <div class="form">
+            <div class="form-control">
+                <h2 class="input-name">Name</h2>
+                <input type="text" placeholder="Enter your full name" name="name">
+                <h2 class="input-name">Email</h2>
+                <input type="text" placeholder="Enter a valid email address" name="email">
+                <h2 class="input-name">RT</h2>
+                <input type="text" placeholder="Enter your neighborhood unit" name="rt">
+            </div>
+            <div class="form-control">
+                <h2 class="input-name">Phone Number</h2>
+                <input type="text" placeholder="Enter your phone number" name="phone_number">
+                <h2 class="input-name">Street Name</h2>
+                <input type="text" placeholder="Enter your street name" name="street_name">
+                <h2 class="input-name">RW</h2>
+                <input type="text" placeholder="Enter your community unit" name="rw">
+            </div>
         </div>
-        <div class="form-control">
-            <h2 class="input-name">Phone Number</h2>
-            <input type="text" placeholder="Enter your phone number">
-            <h2 class="input-name">Area</h2>
-            <input type="text" placeholder="House number, street name, and postal">
+        <div class="submit-wrapper">
+            <button type="submit" class="submit-button">Submit</button>
         </div>
-    </div>
-    <div class="submit-wrapper">
-        <button class="submit-button">Submit</button>
-    </div>
+    </form>
 </div>
     
 @endsection

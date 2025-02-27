@@ -22,21 +22,44 @@ class MobileDriverController extends Controller
             'data' => $orders
         ]);
     }
-
-    public function completeOrder(Order $order)
+    
+    public function updateOrderStatus(Order $order, Request $request)
     {
-        // Update the order status to completed
-        $order->status = 'completed';
+        $nextStatus = $request->status;
+        
+        // Validate the status transition
+        $validStatuses = ['scheduled', 'confirmed', 'on_the_way', 'completed'];
+        if (!in_array($nextStatus, $validStatuses)) {
+            return response()->json([
+                'message' => 'Invalid status'
+            ], 400);
+        }
+        
+        // Update the order status
+        $order->status = $nextStatus;
         $order->save();
         
-        $trash = new Trash;
-        $trash->order_id = $order->id;
-        $trash->save();
-
+        // If the status is completed, create trash record
+        if ($nextStatus === 'completed') {
+            $trash = new Trash;
+            $trash->order_id = $order->id;
+            $trash->category = "Unlabeled";
+            $trash->save();
+        }
+        
         // Return with proper format json
         return response()->json([
-            'message' => 'Order completed'
+            'message' => 'Order status updated to ' . $nextStatus,
+            'data' => $order
         ]);
+    }
+
+    // Legacy method - redirects to updateOrderStatus
+    public function completeOrder(Order $order)
+    {
+        $request = new Request();
+        $request->merge(['status' => 'completed']);
+        return $this->updateOrderStatus($order, $request);
     }
 
     /**
