@@ -10,12 +10,12 @@
     <div class="form">
         <div class="form-control">
             <h2 class="input-name">Drop Off Name:</h2>
-            <input type="text" placeholder="Enter your drop off name" name="name" value="{{ $dropoff->name }}">
+            <input type="text" placeholder="Enter your drop off name" name="name" value="{{ $dropoff->name }}" required>
             
         </div>
         <div class="form-control">
             <h2 class="input-name">Street Address</h2>
-            <input type="text" placeholder="Enter your street address" name="address" value="{{ $dropoff->address }}">
+            <input type="text" placeholder="Enter your street address" name="address" value="{{ $dropoff->address }}" required>
         </div>
     </div>
     <div class="submit-wrapper">

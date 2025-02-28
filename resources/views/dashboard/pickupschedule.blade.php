@@ -73,7 +73,7 @@
                         @if ($order->driver_id == null)
                         <a href="/assigndriver/{{ $order->id }}" class="btn btn-warning">Assign Driver</a>
                         @else
-                        <a href="" class="btn btn-warning">Driver Assigned</a>
+                        <a href="" class="btn btn-warning inactive">Driver Assigned</a>
                         @endif
                     </div>
                     @endforeach

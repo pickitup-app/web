@@ -8,6 +8,7 @@
             <h3>Account Information</h3>
             <h3>Email : {{ $user->email }}</h3>
             <h3>Address : {{ $user->street_name }}</h3>
+            <h3>Total Points : {{ $user->point }}</h3>
         </div>
         <div class="customer-points">
             <h3>Customer's Point</h3>

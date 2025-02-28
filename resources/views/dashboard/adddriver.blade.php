@@ -18,8 +18,7 @@
             </div>
             <div class="form-control">
                 <h2 class="input-name">Phone Number</h2>
-                <input type="text" placeholder="Enter your phone number" name="phone_number">
-                <h2 class="input-name">Street Name</h2>
+                <input type="tel" placeholder="Enter your phone number (11-13 digits)" name="phone_number" pattern="[0-9]{11,13}" title="Please enter a phone number between 11-13 digits" required>                <h2 class="input-name">Street Name</h2>
                 <input type="text" placeholder="Enter your street name" name="street_name">
                 <h2 class="input-name">RW</h2>
                 <input type="text" placeholder="Enter your community unit" name="rw">

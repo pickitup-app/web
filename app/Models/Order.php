@@ -19,6 +19,11 @@ class Order extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function driver()
+    {
+        return $this->belongsTo(User::class, 'driver_id');
+    }
+
     public function tracks()
     {
         return $this->hasMany(Track::class);

@@ -12,16 +12,16 @@
             <button class="btn btn-up-cat">
                 <span class="me-5">Recent </span><img src="{{ asset('img\pickupstatus\urgent\mdi_recent.svg') }}" alt="">
             </button>
-            <div class="dropdown rounded-20 bg-inactive">
+            {{--<div class="dropdown rounded-20 bg-inactive">
                 <button class="btn btn-up-cat-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <span class="me-5">Status </span><img src="{{ asset('img\pickupstatus\urgent\Vector (7).svg') }}" alt="">
                 </button>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Taken</a></li>
                   <li><a class="dropdown-item" href="#">Waiting</a></li>
-                  {{-- <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
+                  <li><a class="dropdown-item" href="#">Something else here</a></li> 
                 </ul>
-              </div>
+              </div>--}}
               {{-- <div class="dropdown rounded-20 bg-inactive   ">
                 <button class="btn btn-up-cat-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <span class="me-5">Locations</span><img src="{{ asset('img\pickupstatus\urgent\basil_location-outline.svg') }}" alt="">

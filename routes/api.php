@@ -24,6 +24,10 @@ Route::post('/send-chat',[ChatController::class,'sendChat'])->middleware('auth:s
 Route::get('/get-assigned-orders/{driver}',[MobileDriverController::class,'getAssignedOrders'])->middleware('auth:sanctum');
 Route::post('/complete-order/{order}',[MobileDriverController::class,'completeOrder'])->middleware('auth:sanctum');
 Route::post('/update-order-status/{order}', [MobileDriverController::class, 'updateOrderStatus']);
+Route::get('/get-scheduled-orders/{driver}', [MobileDriverController::class, 'getScheduledOrders']);
+Route::post('/submit-report/{order}',[MobileDriverController::class,'submitReport'])->middleware('auth:sanctum');
+Route::get('/get-profile',[MobileDriverController::class,'getProfile'])->middleware('auth:sanctum');
+
 
 // Urgent pickup system
 Route::post('/urgent-pickup',[MobileController::class,'submitUrgentPickup'])->middleware('auth:sanctum');

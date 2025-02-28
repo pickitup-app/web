@@ -1,15 +1,56 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Track;
 use App\Models\Trash;
+use App\Models\Report;
 
 class MobileDriverController extends Controller
 {
+    public function getScheduledOrders(User $driver)
+{
+    // Get current date in UTC
+    $currentDate = Carbon::now('UTC')->format('Y-m-d');
+    
+    // Select all scheduled orders with the driver id
+    $orders = Order::with('user')
+        ->where('driver_id', $driver->id)
+        ->orderBy('order_date', 'asc')
+        ->get();
+    
+    // Group orders by date for easier rendering on the client side
+    $groupedOrders = [];
+    
+    foreach ($orders as $order) {
+        // Format the date part only (YYYY-MM-DD) from pickup_time
+        $pickupDate = Carbon::parse($order->pickup_time)->format('Y-m-d');
+        
+        // Initialize the array for this date if it doesn't exist
+        if (!isset($groupedOrders[$pickupDate])) {
+            $groupedOrders[$pickupDate] = [];
+        }
+        
+        // Add the order to the appropriate date group
+        $groupedOrders[$pickupDate][] = $order;
+    }
+    
+    // Sort dates from earliest to latest
+    ksort($groupedOrders);
+    
+    // Force $groupedOrders to be an object if empty, so that Dart always receives an object.
+    $groupedOrders = count($groupedOrders) ? $groupedOrders : (object)$groupedOrders;
+    
+    // Return with proper format json
+    return response()->json([
+        'data' => $groupedOrders,
+        'current_date' => $currentDate
+    ]);
+}
+
     public function getAssignedOrders(User $driver)
     {
         // Select all orders with the user id of the user
@@ -60,6 +101,43 @@ class MobileDriverController extends Controller
         $request = new Request();
         $request->merge(['status' => 'completed']);
         return $this->updateOrderStatus($order, $request);
+    }
+
+    public function submitReport(Request $request, Order $order) 
+    {
+        $report = new Report;
+        $report->driver_id = $request->driver_id;
+        $report->order_id = $request->order_id;
+        $report->problem = $request->problem;
+        $report->save();
+
+        $order->status = 'reported';
+        $order->save();
+
+        return response()->json([
+            'message' => 'Report submitted',
+            'data' => $report
+        ]);
+    }
+
+    public function getProfile()
+    {
+        $driver = auth()->user(); 
+        // Return total days of registered
+        $registered = Carbon::parse($driver->created_at);
+        $now = Carbon::now()->addDays(900);
+
+        $driver->total_days = $registered->longRelativeDiffForHumans(2);
+
+        // Return total Orders completed
+        $driver->total_orders = Order::where('driver_id', $driver->id)->where('status', 'completed')->count();
+
+        // Return total Orders reported
+        $driver->total_reports = Report::where('driver_id', $driver->id)->count();
+
+        return response()->json([
+            'data' => $driver
+        ]);
     }
 
     /**
