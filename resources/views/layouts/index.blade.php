@@ -56,7 +56,7 @@
                                     <small>Administrator</small>
                                 </p>
                             </li> <!--end::User Image--> <!--begin::Menu Body-->
-                            <li class="d-flex justify-content-center align-items-center"> <a href="#" class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
+                            <li class="d-flex justify-content-center align-items-center"> <a href="/logout" class="btn btn-default btn-flat float-end">Sign out</a> </li> <!--end::Menu Footer-->
                         </ul>
                     </li> <!--end::User Menu Dropdown-->
                 </ul> <!--end::End Navbar Links-->

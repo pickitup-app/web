@@ -15,21 +15,21 @@
             <h2>{{ $user->name }}</h2>
         </div>
     </div>
-    <div class="main-seepoints">
+    <div class="main-seepoints" style="height: 50vh; overflow-y: scroll;">
         <div class="column-title">
             <h2 class="column1">Trash History</h2>
             <h2 class="column2">Date/Time</h2>
             <h2 class="column3">Points</h2>
         </div>
+        @foreach ($trashes as $trash)
         <div class="row-content">
-            @foreach ($trashes as $trash)
             <div class="row1">
                 <h2 class="column1">{{ $trash->category }}</h2>
                 <h2 class="column2">{{ $trash->created_at }}</h2>
                 <h2 class="column3">{{ $trash->point }}</h2>
             </div>
-            @endforeach
         </div>
+        @endforeach
         {{-- <div class="row-content">
             <div class="column1">
                 <h2 class="row1">Plastic Bottle</h2>

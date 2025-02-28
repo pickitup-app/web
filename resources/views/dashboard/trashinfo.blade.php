@@ -22,7 +22,11 @@
                 <td class="data-font">{{ $trash->order->user->name }}</td>
                 <td class="data-font">{{ "Pick Up" }}</td>
                 <td class="data-font">{{ $trash->point }}</td>
+                @if ($trash->weight != 0)
+                <td class="data-font"><a href="/"><button class="data-button btn points-button inactive">Saved</button></a></td>
+                @else
                 <td class="data-font"><a href="/updatetrash/{{ $trash->id }}"><button class="data-button btn points-button">Input now..</button></a></td>
+                @endif
             </tr>
             @endforeach
             

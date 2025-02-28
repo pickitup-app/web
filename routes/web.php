@@ -65,3 +65,5 @@ Route::middleware(['admin'])->group(function () {
 
 Route::get('/login',[UserController::class,'loginpage'])->name('login');
 Route::post('/login/post',[UserController::class,'loginaction']);
+
+Route::get('/logout',[UserController::class,'logout']);

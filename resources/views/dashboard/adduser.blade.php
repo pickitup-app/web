@@ -6,7 +6,7 @@
     <h1 class="form-title">ADD NEW USER</h1>
     @error('phone_number')
     <div class="alert alert-danger ms-3 me-3 d-flex align-items-center" role="alert">
-        <p class="m-0">Phone number must be 11 - 13 digits and numeric</p>
+        <p class="m-0">Phone number must be 11 - 13 digits, and unique.</p>
     </div>
     @enderror
     <hr class="line-au">
@@ -25,7 +25,9 @@
         </div>
         <div class="form-control">
             <h2 class="input-name">Phone Number</h2>
-            <input type="tel" placeholder="Enter your phone number (11-13 digits)" name="phone_number" pattern="[0-9]{11,13}" title="Please enter a phone number between 11-13 digits" required>            <input type="text" placeholder="House number, street name, and postal" name="street_name" required>
+            <input type="tel" placeholder="Enter your phone number (11-13 digits)" name="phone_number" pattern="[0-9]{11,13}" title="Please enter a phone number between 11-13 digits" required>            
+            <h2 class="input-name">Street Name</h2>
+            <input type="text" placeholder="House number, street name, and postal" name="street_name" required>
             <h2 class="input-name">Password</h2>
             <input type="text" name="password" value="{{ \Illuminate\Support\Str::random(20) }}" readonly>
         </div>

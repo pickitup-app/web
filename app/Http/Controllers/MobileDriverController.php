@@ -125,7 +125,6 @@ class MobileDriverController extends Controller
         $driver = auth()->user(); 
         // Return total days of registered
         $registered = Carbon::parse($driver->created_at);
-        $now = Carbon::now()->addDays(900);
 
         $driver->total_days = $registered->longRelativeDiffForHumans(2);
 

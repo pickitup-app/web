@@ -14,10 +14,18 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(User $user)
+    public function index(Request $request, User $user)
     {
         // Select all users with the role of user and admin
-        $users = User::where('role','user')->orWhere('role','admin')->get();
+        // if request->search exist then search for user->name
+        if (request('search')) {
+            $searchTerm = request('search');
+            $users = User::where('role','user')->orWhere('role','admin')
+            ->where('name', 'like', '%' . $searchTerm . '%')
+            ->get();
+        } else {
+            $users = User::where('role','user')->orWhere('role','admin')->get();
+        }
         // Select all orders with the users (joined) and is_urgent = 0 and the date is more than current Date and the user_id = $user->id
         $orders = Order::with('user')->where('is_urgent',0)->where('order_date','>=',date('Y-m-d'))->where('user_id',$user->id)->get();
 

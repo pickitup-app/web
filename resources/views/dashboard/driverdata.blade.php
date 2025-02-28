@@ -75,12 +75,34 @@
                     <td class="data-font">{{ $driver->email }}</td>
                     <td class="data-font">{{ $driver->phone_number }}</td>
                     <td class="data-font"><a href="/editdriver/{{ $driver->id }}"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></a></td>
-                    <td class="data-font"><a href="/deletedriver/{{ $driver->id }}"><button class="data-button delete-button"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></a></td>
+                    <td class="data-font"><button class="data-button delete-button" onclick="confirmDelete({{ $driver->id }})"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
                 </tr>
                 @endforeach
             </table>
         </div>
     </div>
-
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+                });
+                window.location.href = "/deletedriver/"+id;
+            }
+            });
+        }
+        
+    </script>
 
 @endsection

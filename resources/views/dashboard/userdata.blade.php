@@ -45,13 +45,35 @@
                     <td class="data-font">{{ $user->street_name==null?"-": $user->street_name . ', RT ' . $user->rt . ', RW ' . $user->rw }}</td>
                     <td class="data-font">{{ $user->email }}</td>
                     <td class="data-font"><a class="data-button edit-button" href="/edituser/{{ $user->id }}" alt="edit-icon"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></a></td>
-                    <td class="data-font"><a class="data-button delete-button" href="/delete/{{ $user->id }}"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></a></td>
+                    <td class="data-font"><button class="data-button delete-button" onclick="confirmDelete({{ $user->id }})"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
                     <td class="data-font"><a class="data-button btn points-button" href="/see-points/{{ $user->id }}">See points..</a></td>
                 </tr>
                 @endforeach
             </table>
         </div>
     </div>
-
-
+    {{-- href="/delete/{{ $user->id }} --}}
+    <script>
+        function confirmDelete(id) {
+            Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+                });
+                window.location.href = "/delete/"+id;
+            }
+            });
+        }
+        
+    </script>
 @endsection

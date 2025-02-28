@@ -8,10 +8,12 @@
     <div class="data-wrapper-pickup">
         <div class="header-data-pickup">
             <div class="search-section-pickup">
-                <input type="text" placeholder="Search Name">
-                <button>
-                    <img src="{{asset('img/search-icon.png')}}" alt="search-icon">
-                </button>
+                <form action="/pickupschedule/1" method="get">
+                    <input type="text" placeholder="Search Name" name="search">
+                    <button type="submit">
+                        <img src="{{asset('img/search-icon.png')}}" alt="search-icon">
+                    </button>
+                </form>
             </div>
             {{-- <div class="level-section">
                 <div class="dropdown level">
