@@ -19,6 +19,7 @@ class MobileDriverController extends Controller
     // Select all scheduled orders with the driver id
     $orders = Order::with('user')
         ->where('driver_id', $driver->id)
+        // ->whereDate('order_date', Carbon::today()) // Filter hanya untuk hari ini
         ->orderBy('order_date', 'asc')
         ->get();
     
@@ -56,6 +57,7 @@ class MobileDriverController extends Controller
         // Select all orders with the user id of the user
         $orders = Order::with('user')
         ->where('driver_id', $driver->id)
+        ->whereDate('order_date',Carbon::now())
         ->get();
         
         // Return with proper format json
@@ -78,6 +80,22 @@ class MobileDriverController extends Controller
         
         // Update the order status
         $order->status = $nextStatus;
+        if ($order->status === 'confirmed') {
+            $track = new Track;
+            $track->order_id = $order->id;
+            $track->status = "Driver confirmed the order.";
+            $track->save();
+        } else if($order->status === 'on_the_way') {
+            $track = new Track;
+            $track->order_id = $order->id;
+            $track->status = "Driver is on the way to your address.";
+            $track->save();
+        } else if ($order->status === 'completed') {
+            $track = new Track;
+            $track->order_id = $order->id;
+            $track->status = "Driver completed the order.";
+            $track->save();
+        }
         $order->save();
         
         // If the status is completed, create trash record
