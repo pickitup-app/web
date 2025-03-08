@@ -67,3 +67,22 @@ Route::get('/login',[UserController::class,'loginpage'])->name('login');
 Route::post('/login/post',[UserController::class,'loginaction']);
 
 Route::get('/logout',[UserController::class,'logout']);
+
+Route::get('/register', function () {
+    return view('dashboard.register');
+});
+
+Route::post('/register/create/',[UserController::class,'register']);
+
+
+Route::get('/reward', function () {
+    return view('dashboard.reward');
+});
+
+Route::get('/updatecatalog', function () {
+    return view('dashboard.updatecatalog');
+});
+
+Route::get('/rewardmanagement', function () {
+    return view('dashboard.rewardmanagement');
+});

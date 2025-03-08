@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="{{ asset('css/trashinfo.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pickupschedule.css') }}">
     <link rel="stylesheet" href="{{ asset('css/urgentpickup.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/reward.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/updatecatalog.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/rewardmanagement.css') }}">
     @if (Request::is('assigndriver/*'))
         <link rel="stylesheet" href="{{ asset('css/assigndriver.css') }}">
     @endif
@@ -130,6 +133,12 @@
                             <a href="/trashinfo" class="nav-link"> 
                                 <img src="{{ asset('img/dashboard/calculator.svg') }}" alt="">
                                 <p>Trash Info</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item {{ request()->is('trashinfo') ? 'active' : '' }}"> 
+                            <a href="/trashinfo" class="nav-link"> 
+                                <img src="{{ asset('img/dashboard/calculator.svg') }}" alt="">
+                                <p>Reward</p>
                             </a> 
                         </li>
                     </ul> <!--end::Sidebar Menu-->

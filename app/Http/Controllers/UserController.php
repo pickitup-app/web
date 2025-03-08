@@ -12,6 +12,18 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+
+    // For Testing Purposes only
+
+    public function register(Request $request) {
+        $user = new User;
+        $user->name = $request->name;
+        $user->password = bcrypt($request->password);
+        $user->phone_number = $request->phone_number;
+        $user->email = $request->email;
+        $user->save();
+        return redirect('/');
+    }
     public function deleteuser(User $user)
     {
         $user->delete();

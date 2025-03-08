@@ -110,6 +110,11 @@ input , select{
     cursor: pointer; /* Tambahkan efek kursor */
 }
 
+.button-catalog{
+    display: flex;
+    flex-direction: row;
+}
+
 /* input::placeholder {
     padding-left: 20px;
 } */
