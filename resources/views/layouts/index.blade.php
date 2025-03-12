@@ -136,8 +136,8 @@
                             </a> 
                         </li>
                         <li class="nav-item {{ request()->is('trashinfo') ? 'active' : '' }}"> 
-                            <a href="/trashinfo" class="nav-link"> 
-                                <img src="{{ asset('img/dashboard/calculator.svg') }}" alt="">
+                            <a href="/reward" class="nav-link"> 
+                                <img src="{{ asset('img\tabler_coin-filled.png') }}" alt="">
                                 <p>Reward</p>
                             </a> 
                         </li>
