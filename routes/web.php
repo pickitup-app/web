@@ -7,6 +7,7 @@ use App\Http\Controllers\TrackController;
 use App\Http\Controllers\TrashController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\BagController;
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\DropoffController; 
 
 // Group Middleware
@@ -75,14 +76,29 @@ Route::get('/register', function () {
 Route::post('/register/create/',[UserController::class,'register']);
 
 
-Route::get('/reward', function () {
-    return view('dashboard.reward');
-});
+Route::get('/reward', [CatalogController::class, 'reward']);
 
-Route::get('/updatecatalog', function () {
-    return view('dashboard.updatecatalog');
-});
+Route::get('/updatecatalog/{catalog:id}', [CatalogController::class, 'updatecatalog']); 
 
 Route::get('/rewardmanagement', function () {
     return view('dashboard.rewardmanagement');
+});
+
+Route::get('/addcatalog', function () {
+    return view('dashboard.addcatalog');
+});
+
+
+Route::post('/submit-catalog', [CatalogController::class, 'store']);
+
+Route::get('/article', function () {
+    return view('dashboard.article');
+});
+
+Route::get('/updatearticle', function () {
+    return view('dashboard.updatearticle');
+});
+
+Route::get('/insertarticle', function () {
+    return view('dashboard.insertarticle');
 });
