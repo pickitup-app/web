@@ -17,19 +17,17 @@
                 <input type="image" name="" id="">
             </div>
             <h2 class="input-name">Content</h2>
-            <input type="text" name="" id="">
+            <textarea name="" id="" cols="30" rows="10" class="content-article">
+                
+            </textarea>
             {{-- <input type="text" required placeholder="Enter a valid weight" value="{{ $trash->weight }}" name="weight"> --}}
         </div>
         <div class="form-control">
-            <h2 class="input-name">Writter</h2>
+            <h2 class="input-name">Writer</h2>
             <input type="text" value="" name="">
         </div>
-    </div>
-    <div class="button-catalog">
-        <div class="delete-wrapper">
+        <div class="button-catalog">
             <button type="submit" class="delete-button">Cancel</button>
-        </div>
-        <div class="delete-wrapper">
             <button type="submit" class="submit-button">Save</button>
         </div>
     </div>
