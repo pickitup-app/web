@@ -13,9 +13,9 @@
             <input type="text" value="">
             {{-- <input type="text"required placeholder="Enter bag code" value="{{ $trash->order->user->id }}" disabled> --}}
             <h2 class="input-name">Picture</h2>
-            <div class="input-logo">
-                <input type="image" name="" id="">
-            </div>
+                <div class="input-logo w-100">
+                    <input class="form-control w-100" type="file" id="formFile">
+                </div>
             <h2 class="input-name">Content</h2>
             <textarea name="" id="" cols="30" rows="10" class="content-article">
                 
