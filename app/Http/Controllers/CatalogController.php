@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catalog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CatalogController extends Controller
 {
@@ -33,6 +34,14 @@ class CatalogController extends Controller
         $catalog->title = $request->title;
         $catalog->description = $request->description;
         $catalog->points = $request->points;
+
+        // Process image path using storage
+        $path = $request->file('logo')->store('images','public');
+        $catalog->logo = $path;
+
+        $catalog->termsandconditions = $request->termsandconditions;
+        $catalog->howtoredeem = $request->howtoredeem;
+
         $catalog->save();
 
         return redirect('/reward');
@@ -59,7 +68,20 @@ class CatalogController extends Controller
      */
     public function update(Request $request, Catalog $catalog)
     {
-        //
+        $catalog->title = $request->title;
+        $catalog->description = $request->description;
+        $catalog->points = $request->points;
+
+        // Process image path using storage
+        $path = $request->file('logo')->store('images','public');
+        $catalog->logo = $path;
+
+        $catalog->termsandconditions = $request->termsandconditions;
+        $catalog->howtoredeem = $request->howtoredeem;
+
+        $catalog->save();
+
+        return redirect('/reward');
     }
 
     /**
@@ -67,7 +89,12 @@ class CatalogController extends Controller
      */
     public function destroy(Catalog $catalog)
     {
-        //
+        // Delete image from storage
+        Storage::delete('public/'.$catalog->logo);
+        $catalog->delete();
+    
+
+        return redirect('/reward');
     }
 
     public function reward(){

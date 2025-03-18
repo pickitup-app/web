@@ -8,7 +8,8 @@ use App\Http\Controllers\TrashController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\BagController;
 use App\Http\Controllers\CatalogController;
-use App\Http\Controllers\DropoffController; 
+use App\Http\Controllers\DropoffController;
+use App\Http\Controllers\ArticleController; 
 
 // Group Middleware
 Route::middleware(['admin'])->group(function () {
@@ -77,6 +78,10 @@ Route::post('/register/create/',[UserController::class,'register']);
 
 
 Route::get('/reward', [CatalogController::class, 'reward']);
+Route::post('/catalog/add', [CatalogController::class, 'store']);
+Route::put('/catalog/update/{catalog:id}', [CatalogController::class, 'update']);
+Route::get('/catalog/delete/{catalog:id}', [CatalogController::class, 'destroy']);
+
 
 Route::get('/updatecatalog/{catalog:id}', [CatalogController::class, 'updatecatalog']); 
 
@@ -91,13 +96,13 @@ Route::get('/addcatalog', function () {
 
 Route::post('/submit-catalog', [CatalogController::class, 'store']);
 
-Route::get('/article', function () {
-    return view('dashboard.article');
-});
+Route::get('/article',[ArticleController::class,'show']);
 
-Route::get('/updatearticle', function () {
-    return view('dashboard.updatearticle');
-});
+Route::post('/article/add',[ArticleController::class,'store']);
+Route::get('/article/delete/{article:id}',[ArticleController::class,'destroy']);
+Route::put('/article/update/{article:id}',[ArticleController::class,'update']);
+
+Route::get('/updatearticle/{article:id}', [ArticleController::class, 'updatearticle']);
 
 Route::get('/insertarticle', function () {
     return view('dashboard.insertarticle');

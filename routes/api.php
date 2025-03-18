@@ -32,3 +32,17 @@ Route::get('/get-profile',[MobileDriverController::class,'getProfile'])->middlew
 // Urgent pickup system
 Route::post('/urgent-pickup',[MobileController::class,'submitUrgentPickup'])->middleware('auth:sanctum');
 
+// Articles
+Route::get('/get-articles',[MobileController::class,'getArticles']);
+Route::get('/get-article/{article:id}',[MobileController::class,'getSpecificArticle']);
+
+
+// Catalogs
+Route::get('/get-catalogs',[MobileController::class,'getAllCatalogs']);
+Route::get('/get-catalogs-user',[MobileController::class,'getAllCatalogsUser'])->middleware('auth:sanctum');
+Route::get('/get-catalog/{catalog:id}',[MobileController::class,'getSpecificCatalog']);
+
+// Redeem
+Route::post('/redeem/{catalog:id}',[MobileController::class,'redeemVoucher'])->middleware('auth:sanctum');
+Route::get('/get-user-point',[MobileController::class,'getUserPoint'])->middleware('auth:sanctum');
+

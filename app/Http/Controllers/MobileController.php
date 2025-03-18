@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Order;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use App\Models\Article;
+use App\Models\Catalog;
 
 class MobileController extends Controller
 {
@@ -350,6 +352,117 @@ class MobileController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Password is valid.',
+        ]);
+    }
+
+    public function getArticles()
+    {
+        // Get all articles but cut the content to only 25 words
+        $articles = Article::all();
+        return response()->json([
+            'success' => true,
+            'data' => $articles,
+        ]);
+    }
+
+    public function getSpecificArticle(Article $article)
+    {
+        if (!$article) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Article not found.',
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $article,
+        ]);
+    }
+
+    public function getAllCatalogs()
+    {
+        $catalogs = Catalog::all();
+
+        return response()->json([
+            'success' => true,
+            'data' => $catalogs,
+        ]);
+    }
+
+    public function getSpecificCatalog(Catalog $catalog)
+    {
+        // $catalog = Catalog::find($id);
+
+        if (!$catalog) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Catalog not found.',
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $catalog,
+        ]);
+    }
+
+    public function getAllCatalogsUser(Request $request)
+{
+    $user = $request->user();
+    // Misalkan relasi usercatalogs sudah didefinisikan dengan relasi catalog
+    $catalogs = $user->usercatalogs()->with('catalog')->get();
+
+    return response()->json([
+        'success' => true,
+        'data' => $catalogs,
+    ]);
+}
+
+    public function redeemVoucher(Catalog $catalog)
+    {
+        $user = auth()->user();
+
+        // // Check if user already redeem the voucher
+        // if ($user->usercatalogs->where('catalog_id', $catalog->id)->count() > 0) {
+        //     return response()->json([
+        //         'success' => false,
+        //         'message' => 'You already redeem this voucher.',
+        //     ], 400);
+        // }
+
+        // Check if user have enough points
+        if ($user->point < $catalog->points) {
+            return response()->json([
+                'success' => false,
+                'message' => 'You don\'t have enough points to redeem this voucher.',
+            ], 400);
+        }
+
+        // Deduct user points
+        $user->point -= $catalog->points;
+        $user->save();
+
+        // Add user to catalog
+        $user->usercatalogs()->create([
+            'catalog_id' => $catalog->id,
+        ]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Voucher redeemed successfully.',
+        ]);
+    }
+
+    public function getUserPoint()
+    {
+        $user = auth()->user();
+
+        return response()->json([
+            'success' => true,
+            'data' => [
+                'point' => $user->point,
+            ],
         ]);
     }
 }

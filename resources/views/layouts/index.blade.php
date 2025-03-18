@@ -135,10 +135,16 @@
                                 <p>Trash Info</p>
                             </a> 
                         </li>
-                        <li class="nav-item {{ request()->is('trashinfo') ? 'active' : '' }}"> 
+                        <li class="nav-item {{ request()->is('reward') ? 'active' : '' }}"> 
                             <a href="/reward" class="nav-link"> 
                                 <img src="{{ asset('img\tabler_coin-filled.png') }}" alt="">
                                 <p>Reward</p>
+                            </a> 
+                        </li>
+                        <li class="nav-item {{ request()->is('article') ? 'active' : '' }}"> 
+                            <a href="/article" class="nav-link"> 
+                                <img src="{{ asset('img\stash_article-solid.png') }}" alt="">
+                                <p>Article</p>
                             </a> 
                         </li>
                     </ul> <!--end::Sidebar Menu-->

@@ -1,7 +1,9 @@
 @extends('layouts.index')
 
 @section('content')
-<div class="form-wrapper">
+<form class="form-wrapper" enctype="multipart/form-data" method="POST" action="/catalog/update/{{ $catalog->id }}">
+    @csrf
+    @method('PUT')
     <div class="form-header-catalog">
         <img src="{{ asset('img/back-catalog.png')}}" alt="">
         <h1 class="text-header">UPDATE CATALOG</h1>
@@ -11,35 +13,36 @@
         <div class="d-flex flex-row w-100">
             <div class="form-control form-control-catalog">
                 <h2 class="input-name">Name</h2>
-                <input type="text" value="{{ $catalog->title }}">
+                <input type="text" name="title" value="{{ $catalog->title }}">
                 {{-- <input type="text"required placeholder="Enter bag code" value="{{ $trash->order->user->id }}" disabled> --}}
                 <h2 class="input-name">Description</h2>
-                <input type="text" name="" id="">
+                <input type="text" name="description" id="" value="{{ $catalog->description }}">
                 {{-- <input type="text" required placeholder="Enter a valid weight" value="{{ $trash->weight }}" name="weight"> --}}
                 <h2 class="input-name">Logo</h2>
-                <h2 class="input-name">Picture</h2>
                 <div class="input-logo w-100">
-                    <input class="form-control w-100" type="file" id="formFile">
+                    <input class="form-control w-100" type="file" id="formFile" name="logo" required>
                 </div>
             </div>
             <div class="form-control form-control-catalog">
                 <h2 class="input-name">Points</h2>
-                <input type="text" placeholder="0" value="" name="point">
+                <input type="number" placeholder="0" value="" name="points" value="{{ $catalog->points }}">
             </div>
         </div>
         <div class="form-control form-control-catalog">
             <h2 class="input-name">Terms & Condition</h2>
             <div class="input-tnc">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="termsandconditions" id="" cols="30" rows="10">{{ $catalog->termsandconditions }}</textarea>
             </div>
             <h2 class="input-name">How To Use</h2>
             <div class="input-htu">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="howtoredeem" id="howtoredeem" cols="30" rows="10">{{ $catalog->howtoredeem }}</textarea>
             </div>
 
             <div class="button-catalog">
                 <div class="delete-wrapper">
-                    <button type="submit" class="delete-button">Cancel</button>
+                    <a href="/catalog/delete/{{ $catalog->id }}">
+                        <button type="button" class="delete-button">Delete</button>
+                    </a>
                 </div>
                 <div class="delete-wrapper">
                     <button type="submit" class="cat-button">Save</button>
@@ -48,7 +51,7 @@
         </div>
     </div>
     
-</div>
+</form>
 
 
     

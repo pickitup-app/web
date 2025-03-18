@@ -22,7 +22,7 @@
     @foreach ($catalogs as $catalog)
     <div class="card-content d-flex flex-column shadow container-wrap-reward">
         <div class="reward-card-img">
-            <img class="logo-reward" src="{{ asset('./img/logo-tuku.png') }}" alt="">
+            <img class="logo-reward" src="{{ Storage::url($catalog->logo) }}" alt="">
             <div class="edit-reward">
                 <a href="/updatecatalog/{{ $catalog->id }}">
                     <img src="{{ asset('./img/edit-icon.png') }}" alt="">

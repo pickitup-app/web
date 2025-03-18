@@ -91,4 +91,5 @@
 
 textarea {
     box-sizing: content-box;
+    padding: 15px;
 }

@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('catalogs', function (Blueprint $table) {
+        Schema::create('catalog_users', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->integer('points');
-            $table->string('logo')->nullable();
-            $table->string('termsandconditions')->nullable();
-            $table->string('howtoredeem')->nullable();
+            $table->foreignId('catalog_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->boolean('is_redeemed')->default('0');
             $table->timestamps();
         });
     }
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('catalogs');
+        Schema::dropIfExists('catalog_users');
     }
 };
