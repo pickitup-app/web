@@ -40,9 +40,7 @@
 
             <div class="button-catalog">
                 <div class="delete-wrapper">
-                    <a href="/catalog/delete/{{ $catalog->id }}">
-                        <button type="button" class="delete-button">Delete</button>
-                    </a>
+                    <button type="button" class="delete-button" onclick="confirmDelete({{ $catalog->id }})">Delete</button>
                 </div>
                 <div class="delete-wrapper">
                     <button type="submit" class="cat-button">Save</button>
@@ -52,6 +50,29 @@
     </div>
     
 </form>
+
+<script>
+    function confirmDelete(id) {
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+            });
+            window.location.href = "/catalog/delete/"+id;
+        }
+        });
+    }
+</script>
 
 
     
