@@ -80,3 +80,14 @@
     padding-top: 82px;
     align-items: self-start;
 }
+
+.reward-card-img img{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.reward-card-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

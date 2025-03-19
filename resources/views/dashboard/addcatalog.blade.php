@@ -19,7 +19,7 @@
                 {{-- <input type="text" required placeholder="Enter a valid weight" value="{{ $trash->weight }}" name="weight"> --}}
                 <h2 class="input-name">Logo</h2>
                 <div class="input-logo w-100">
-                    <input class="form-control w-100" type="file" id="formFile" name="logo">
+                    <input class="form-control w-100" type="file" id="formFile" name="logo" required>
                 </div>
             </div>
             <div class="form-control form-control-catalog">

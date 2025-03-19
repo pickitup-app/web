@@ -75,7 +75,7 @@
                     <td class="data-font">{{ $driver->email }}</td>
                     <td class="data-font">{{ $driver->phone_number }}</td>
                     <td class="data-font"><a href="/editdriver/{{ $driver->id }}"><button class="data-button edit-button"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></button></a></td>
-                    <td class="data-font"><button class="data-button delete-button" onclick="confirmDelete({{ $driver->id }})"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
+                    <td class="data-font"><button class="data-button" onclick="confirmDelete({{ $driver->id }})"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
                 </tr>
                 @endforeach
             </table>

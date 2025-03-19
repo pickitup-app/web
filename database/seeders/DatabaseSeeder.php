@@ -24,5 +24,22 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
             'phone_number' => '123412341234'
         ]);
+
+        // Create more than one user
+        User::factory()->create([
+            'name' => 'Delbert',
+            'email' => 'delbert@gmail.com',
+            'password' => '12345678',
+            'role' => 'driver',
+            'phone_number' => '999999999999'
+        ]);
+
+        User::factory()->create([
+            'name' => 'Jonathan',
+            'email' => 'jonathan@gmail.com',
+            'password' => '12345678',
+            'role' => 'user',
+            'phone_number' => '777777777777'
+        ]);
     }
 }

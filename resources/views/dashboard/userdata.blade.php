@@ -45,7 +45,7 @@
                     <td class="data-font">{{ $user->street_name==null?"-": $user->street_name . ', RT ' . $user->rt . ', RW ' . $user->rw }}</td>
                     <td class="data-font">{{ $user->email }}</td>
                     <td class="data-font"><a class="data-button edit-button" href="/edituser/{{ $user->id }}" alt="edit-icon"><img src="{{asset('img/edit-icon.png')}}" alt="edit-icon"></a></td>
-                    <td class="data-font"><button class="data-button delete-button" onclick="confirmDelete({{ $user->id }})"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
+                    <td class="data-font"><button class="data-button" onclick="confirmDelete({{ $user->id }})"><img src="{{asset('img/delete-icon.png')}}" alt="delete-icon"></button></td>
                     <td class="data-font"><a class="data-button btn points-button" href="/see-points/{{ $user->id }}">See points..</a></td>
                 </tr>
                 @endforeach
